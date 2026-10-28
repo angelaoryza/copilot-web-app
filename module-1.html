@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="editorial">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 01: What is vibe coding (and who cares?) | Copilot x Sectors</title>
+  <script>
+    (function(){
+      var t = 'light';
+      try { t = localStorage.getItem('copilot-sectors-theme') || 'light'; } catch (e) {}
+      if (t === 'dark') document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average&family=Ubuntu+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Ubuntu+Sans+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/algoritma-mark-midnight.svg" type="image/svg+xml" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Course">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Copilot x Sectors, home">
+      <img class="logo-mark logo--on-light" src="assets/algoritma-mark-midnight.svg" alt="Algoritma" width="24" height="24" />
+      <img class="logo-mark logo--on-dark" src="assets/algoritma-mark-cream.svg" alt="Algoritma" width="24" height="24" />
+      <span class="nav-brand-text">Copilot x Sectors</span>
+    </a>
+    <div class="nav-links-wrap">
+      <button class="nav-scroll-arrow nav-scroll-arrow--left" type="button" onclick="scrollNav(-1)" aria-label="Scroll left" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a><a href="/setup" class="nav-link">Setup</a><a href="/module-1" class="nav-link active" aria-current="page"><span class="nav-num">01</span>Vibe coding</a><a href="/module-2" class="nav-link"><span class="nav-num">02</span>AI workspace</a><a href="/module-3" class="nav-link"><span class="nav-num">03</span>Web apps</a><a href="/module-4" class="nav-link"><span class="nav-num">04</span>Warm-up</a><a href="/module-5" class="nav-link"><span class="nav-num">05</span>Market data</a><a href="/module-6" class="nav-link"><span class="nav-num">06</span>IDX app</a><a href="/module-7" class="nav-link"><span class="nav-num">07</span>Stretch</a><a href="/module-8" class="nav-link"><span class="nav-num">08</span>Git</a><a href="/module-9" class="nav-link"><span class="nav-num">09</span>Ship it</a><a href="/module-10" class="nav-link"><span class="nav-num">10</span>MCP bonus</a><a href="/resources" class="nav-link">Resources</a>
+      </div>
+      <button class="nav-scroll-arrow nav-scroll-arrow--right" type="button" onclick="scrollNav(1)" aria-label="Scroll right" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span></button>
+    </div>
+    <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch between light and dark theme">
+      <svg id="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+<header class="page-header">
+  <div class="container page-header-inner">
+    <div class="page-header-eyebrow"><span class="eyebrow-num">Module 01</span> <span aria-hidden="true">/</span> Vibe coding</div>
+    <h1>What is vibe coding (and who cares?)</h1>
+    <p class="page-header-desc">You describe, the AI builds, you check.</p>
+    
+  </div>
+</header>
+<main id="main">
+
+<section class="section" id="s-1-1-two-definitions">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>1.1 Two definitions</h2>
+    <p>The <strong>short definition</strong>: vibe coding is building software with the help of AI. The <strong>long definition</strong>: vibe coding is directing capable AI agents as they plan, write, test and deploy code for you. An <strong>AI agent</strong> is an AI that does not only answer; it makes a plan, takes several steps on its own, and reports back.</p>
+<p>Most of it is a conversation: you say what you want in everyday language, the AI writes the Python, and you say what to change. Success depends on how clearly you <strong>communicate</strong> and how much <strong>context</strong> you give, not on knowing syntax.</p>
+
+  </div>
+</section>
+<section class="section" id="s-1-2-most-of-the-work-not-all-of-it">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>1.2 Most of the work, not all of it</h2>
+    <p>The AI does perhaps 80 to 90 percent of the work. The rest is yours, and it is why this course exists:</p>
+<div aria-label="Table: The AI is good at, You still own" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th>The AI is good at</th>
+<th>You still own</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Writing code that runs</td>
+<td>Deciding what to build and for whom</td>
+</tr>
+<tr>
+<td>Explaining code and error messages</td>
+<td>Checking the result is right, not only that it runs</td>
+</tr>
+<tr>
+<td>Doing setup steps</td>
+<td>Keeping secrets such as API keys safe</td>
+</tr>
+<tr>
+<td>Trying again when something fails</td>
+<td>Saving your work and putting it online</td>
+</tr>
+</tbody>
+</table></div>
+
+  </div>
+</section>
+<section class="section" id="s-1-3-why-it-matters-now">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>1.3 Why it matters now</h2>
+    <p><strong>Speed</strong>: an app that once needed a team and months can be built by one person in hours. <strong>Who can build</strong>: if you can describe a problem clearly, you can solve it with a small tool of your own, such as turning a weekly spreadsheet chore into a web page.</p>
+
+  </div>
+</section>
+<section class="section" id="s-1-4-today-s-finish-line-and-roadmap">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>1.4 Today&#x27;s finish line and roadmap</h2>
+    <p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> watch the instructor open the finished <strong>IDX Stock Snapshot</strong> on a phone. Type a ticker such as <code>BBCA</code> and it shows the company, its latest closing price, a price chart and a savings calculator, or a friendly message if the ticker does not exist. By the end of the session you will have your own, live: <strong>understand</strong> (Modules 1 to 3), <strong>build one project step by step</strong> (4 to 6), <strong>save and ship</strong> (8, 9), and a <strong>bonus</strong> look at MCP (10). Module 7 is extra practice for fast finishers and for home.</p>
+
+  </div>
+</section>
+<div class="container"><nav class="page-nav" aria-label="Previous and next page"><a href="/setup" class="page-nav-link"><span class="page-nav-label"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Previous</span><span class="page-nav-title">Set up before you arrive</span></a><a href="/module-2" class="page-nav-link page-nav-link--next"><span class="page-nav-label">Next <svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="page-nav-title">Module 02: Your AI workspace</span></a></nav></div>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="https://algorit.ma" class="footer-logo" target="_blank" rel="noopener" aria-label="Algoritma">
+      <img class="logo-wordmark logo--on-light" src="assets/algoritma-wordmark-midnight.svg" alt="Algoritma" width="118" height="28" />
+      <img class="logo-wordmark logo--on-dark" src="assets/algoritma-wordmark-cream.svg" alt="Algoritma" width="118" height="28" />
+    </a>
+    <p class="footer-text">Build and ship a live IDX stock app with an AI pair programmer. GitHub Copilot x Sectors Community Meetup, 31 October 2026, Block71 Jakarta.</p>
+    <p class="footer-text footer-text--fine">This session is about building software. Nothing in it, including any number your app shows, is investment advice.</p>
+  </div>
+</footer>
+<script>
+  function currentTheme(){
+    return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  }
+
+  function toggleTheme(){
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.classList.toggle('dark', next === 'dark');
+    try { localStorage.setItem('copilot-sectors-theme', next); } catch (e) {}
+    syncThemeIcon(next);
+  }
+
+  function syncThemeIcon(theme){
+    var sun = document.getElementById('theme-icon-sun');
+    var moon = document.getElementById('theme-icon-moon');
+    // Show the theme you would switch to
+    if (sun) sun.style.display = theme === 'dark' ? 'block' : 'none';
+    if (moon) moon.style.display = theme === 'light' ? 'block' : 'none';
+  }
+
+  function checkNavScroll(){
+    var el = document.getElementById('navLinks');
+    var wrap = document.querySelector('.nav-links-wrap');
+    var left = document.querySelector('.nav-scroll-arrow--left');
+    var right = document.querySelector('.nav-scroll-arrow--right');
+    if (!el || !wrap || !left || !right) return;
+    var maxScroll = el.scrollWidth - el.clientWidth;
+    var showLeft = el.scrollLeft > 4;
+    var showRight = maxScroll > 4 && el.scrollLeft < maxScroll - 4;
+    left.classList.toggle('visible', showLeft);
+    right.classList.toggle('visible', showRight);
+    wrap.classList.toggle('show-left', showLeft);
+    wrap.classList.toggle('show-right', showRight);
+  }
+
+  function scrollNav(dir){
+    var el = document.getElementById('navLinks');
+    if (el) el.scrollBy({ left: dir * 140, behavior: 'smooth' });
+  }
+
+  function copyText(text){
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function(resolve, reject){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
+      document.body.removeChild(ta);
+    });
+  }
+
+  function copyCodeBlock(btn){
+    var block = btn.closest('.code-block');
+    var pre = block ? block.querySelector('pre') : null;
+    if (!pre) return;
+    var tip = btn.querySelector('.code-copy-tip');
+    var original = btn.querySelector('svg').outerHTML;
+    copyText(pre.textContent).then(function(){
+      btn.classList.add('copied');
+      btn.querySelector('svg').outerHTML = '<svg class="icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+      if (tip) tip.textContent = 'Copied';
+      setTimeout(function(){
+        btn.classList.remove('copied');
+        btn.querySelector('svg').outerHTML = original;
+        if (tip) tip.textContent = '';
+      }, 1500);
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', function(){
+    syncThemeIcon(currentTheme());
+    var navLinks = document.getElementById('navLinks');
+    var active = navLinks ? navLinks.querySelector('.nav-link.active') : null;
+    if (active && navLinks) {
+      navLinks.scrollLeft = active.offsetLeft - navLinks.clientWidth / 2 + active.offsetWidth / 2;
+    }
+    checkNavScroll();
+    if (navLinks) navLinks.addEventListener('scroll', checkNavScroll);
+    window.addEventListener('resize', checkNavScroll);
+  });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="572.4pt" height="202.896pt" viewBox="0 0 572.4 202.896" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-28T18:30:47.007618</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 202.896 
+L 572.4 202.896 
+L 572.4 0 
+L 0 0 
+z
+" style="fill: #faf6ed"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 28.404 153.5616 
+L 153.396 153.5616 
+Q 160.092 153.5616 160.092 146.9088 
+L 160.092 72.6192 
+Q 160.092 65.9664 153.396 65.9664 
+L 28.404 65.9664 
+Q 21.708 65.9664 21.708 72.6192 
+L 21.708 146.9088 
+Q 21.708 153.5616 28.404 153.5616 
+z
+" clip-path="url(#p82a23f17d6)" style="fill: #fffdf8; stroke: #3e526a; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 223.704 153.5616 
+L 348.696 153.5616 
+Q 355.392 153.5616 355.392 146.9088 
+L 355.392 72.6192 
+Q 355.392 65.9664 348.696 65.9664 
+L 223.704 65.9664 
+Q 217.008 65.9664 217.008 72.6192 
+L 217.008 146.9088 
+Q 217.008 153.5616 223.704 153.5616 
+z
+" clip-path="url(#p82a23f17d6)" style="fill: #fffdf8; stroke: #3e526a; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 419.004 153.5616 
+L 543.996 153.5616 
+Q 550.692 153.5616 550.692 146.9088 
+L 550.692 72.6192 
+Q 550.692 65.9664 543.996 65.9664 
+L 419.004 65.9664 
+Q 412.308 65.9664 412.308 72.6192 
+L 412.308 146.9088 
+Q 412.308 153.5616 419.004 153.5616 
+z
+" clip-path="url(#p82a23f17d6)" style="fill: #fffdf8; stroke: #3e526a; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 164.324885 94.7952 
+Q 188.551212 94.7952 210.988685 94.7952 
+" clip-path="url(#p82a23f17d6)" style="fill: none; stroke: #3e526a; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 205.388685 91.9952 
+L 210.988685 94.7952 
+L 205.388685 97.5952 
+z
+" clip-path="url(#p82a23f17d6)" style="fill: #3e526a; stroke: #3e526a; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 212.775115 124.7328 
+Q 188.548788 124.7328 165.887708 124.7328 
+" clip-path="url(#p82a23f17d6)" style="fill: none; stroke: #4a535c; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 171.487708 127.5328 
+L 165.887708 124.7328 
+L 171.487708 121.9328 
+z
+" clip-path="url(#p82a23f17d6)" style="fill: #4a535c; stroke: #4a535c; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 359.624885 94.7952 
+Q 383.851212 94.7952 406.288685 94.7952 
+" clip-path="url(#p82a23f17d6)" style="fill: none; stroke: #3e526a; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 400.688685 91.9952 
+L 406.288685 94.7952 
+L 400.688685 97.5952 
+z
+" clip-path="url(#p82a23f17d6)" style="fill: #3e526a; stroke: #3e526a; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 408.075115 124.7328 
+Q 383.848788 124.7328 361.187708 124.7328 
+" clip-path="url(#p82a23f17d6)" style="fill: none; stroke: #4a535c; stroke-width: 1.4; stroke-linecap: round"/>
+    <path d="M 366.787708 127.5328 
+L 361.187708 124.7328 
+L 366.787708 121.9328 
+z
+" clip-path="url(#p82a23f17d6)" style="fill: #4a535c; stroke: #4a535c; stroke-width: 1.4; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 13px; font-family: 'Average'; text-anchor: middle; fill: #001017" x="286.2" y="21.06" transform="rotate(-0 286.2 21.06)">An API is like a waiter</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 500; font-size: 10.5px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #001017" x="90.9" y="89.761139" transform="rotate(-0 90.9 89.761139)">Your app</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 9px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #4a535c" transform="translate(44.812266 122.579437)">app.py asks for data</text>
+    <text style="font-size: 9px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #4a535c" transform="translate(48.539531 135.179438)">through sectors.py</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 500; font-size: 10.5px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #001017" x="286.2" y="89.761139" transform="rotate(-0 286.2 89.761139)">Sectors API</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #4a535c" transform="translate(232.394062 116.279438)">The waiter: checks your</text>
+    <text style="font-size: 9px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #4a535c" transform="translate(239.705859 128.879437)">key, takes the order,</text>
+    <text style="font-size: 9px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #4a535c" transform="translate(245.692266 141.479438)">brings the answer</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 500; font-size: 10.5px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #001017" x="481.5" y="89.761549" transform="rotate(-0 481.5 89.761549)">Sectors' database</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 9px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #4a535c" transform="translate(429.337969 122.579437)">The kitchen: IDX prices</text>
+    <text style="font-size: 9px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #4a535c" transform="translate(433.344375 135.179438)">and company reports</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 8.8px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #4a535c" x="188.55" y="56.610281" transform="rotate(-0 188.55 56.610281)">1  Request: "company report for BBCA" + your API key</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 8.8px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #4a535c" x="188.55" y="173.588681" transform="rotate(-0 188.55 173.588681)">2  Response: data as JSON, e.g. "last_close_price": 4940</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p82a23f17d6">
+   <rect x="7.2" y="7.2" width="558" height="188.496"/>
+  </clipPath>
+ </defs>
+</svg>

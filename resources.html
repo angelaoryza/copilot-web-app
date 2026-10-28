@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" class="editorial">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glossary and links | Copilot x Sectors</title>
+  <script>
+    (function(){
+      var t = 'light';
+      try { t = localStorage.getItem('copilot-sectors-theme') || 'light'; } catch (e) {}
+      if (t === 'dark') document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average&family=Ubuntu+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Ubuntu+Sans+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/algoritma-mark-midnight.svg" type="image/svg+xml" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Course">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Copilot x Sectors, home">
+      <img class="logo-mark logo--on-light" src="assets/algoritma-mark-midnight.svg" alt="Algoritma" width="24" height="24" />
+      <img class="logo-mark logo--on-dark" src="assets/algoritma-mark-cream.svg" alt="Algoritma" width="24" height="24" />
+      <span class="nav-brand-text">Copilot x Sectors</span>
+    </a>
+    <div class="nav-links-wrap">
+      <button class="nav-scroll-arrow nav-scroll-arrow--left" type="button" onclick="scrollNav(-1)" aria-label="Scroll left" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a><a href="/setup" class="nav-link">Setup</a><a href="/module-1" class="nav-link"><span class="nav-num">01</span>Vibe coding</a><a href="/module-2" class="nav-link"><span class="nav-num">02</span>AI workspace</a><a href="/module-3" class="nav-link"><span class="nav-num">03</span>Web apps</a><a href="/module-4" class="nav-link"><span class="nav-num">04</span>Warm-up</a><a href="/module-5" class="nav-link"><span class="nav-num">05</span>Market data</a><a href="/module-6" class="nav-link"><span class="nav-num">06</span>IDX app</a><a href="/module-7" class="nav-link"><span class="nav-num">07</span>Stretch</a><a href="/module-8" class="nav-link"><span class="nav-num">08</span>Git</a><a href="/module-9" class="nav-link"><span class="nav-num">09</span>Ship it</a><a href="/module-10" class="nav-link"><span class="nav-num">10</span>MCP bonus</a><a href="/resources" class="nav-link active" aria-current="page">Resources</a>
+      </div>
+      <button class="nav-scroll-arrow nav-scroll-arrow--right" type="button" onclick="scrollNav(1)" aria-label="Scroll right" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span></button>
+    </div>
+    <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch between light and dark theme">
+      <svg id="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+<header class="page-header">
+  <div class="container page-header-inner">
+    <div class="page-header-eyebrow">Resources</div>
+    <h1>Glossary and links</h1>
+    <p class="page-header-desc">Every term in one plain sentence, and the tools you use.</p>
+    
+  </div>
+</header>
+<main id="main">
+<section class="section" id="s-starter">
+  <div class="container">
+    <div class="section-label">Starter kit</div>
+    <h2>Get the starter files</h2>
+    <div class="starter-buttons">
+  <a href="https://github.com/YOUR-ACCOUNT/idx-stock-snapshot-starter" target="_blank" rel="noopener" class="btn btn-primary"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="8" r="2.5"/><line x1="6" y1="8.5" x2="6" y2="15.5"/><path d="M18 10.5c0 4-6 3-11 5.5"/></svg>Starter kit on GitHub</a>
+  <a href="https://drive.google.com/YOUR-LINK" target="_blank" rel="noopener" class="btn btn-outline"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download from Google Drive</a>
+</div>
+  </div>
+</section>
+<section class="section" id="s-glossary">
+  <div class="container">
+    <div class="section-label">Appendix</div>
+    <h2>Glossary</h2>
+    <div aria-label="Table: Term, Meaning" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agent mode</strong></td>
+<td>The Copilot mode that builds: it creates and edits files, runs commands and tries again (2.3).</td>
+</tr>
+<tr>
+<td><strong>AI agent</strong></td>
+<td>An AI that plans and takes several steps on its own instead of only answering.</td>
+</tr>
+<tr>
+<td><strong>API</strong></td>
+<td>Application programming interface: a set way for one program to ask another for data (5.1).</td>
+</tr>
+<tr>
+<td><strong>API key</strong></td>
+<td>A secret code that identifies you to an API; each request with it may use credits (5.2).</td>
+</tr>
+<tr>
+<td><strong>Ask mode</strong></td>
+<td>The Copilot mode that answers and plans without changing files (2.3).</td>
+</tr>
+<tr>
+<td><strong>Backend</strong></td>
+<td>The part of an app that works out of sight: formulas, rules, fetching data, keeping secrets (3.3).</td>
+</tr>
+<tr>
+<td><strong>Bug</strong></td>
+<td>The app doing something wrong, from a crash to a wrong number.</td>
+</tr>
+<tr>
+<td><strong>Closing price</strong></td>
+<td>The price of one share at the end of a trading day.</td>
+</tr>
+<tr>
+<td><strong>Commit</strong></td>
+<td>A save point in Git, with a short message about what changed (8.1).</td>
+</tr>
+<tr>
+<td><strong>Context</strong></td>
+<td>Everything Copilot sees when it answers: your prompt, attached files, the chat so far.</td>
+</tr>
+<tr>
+<td><strong>Credits</strong></td>
+<td>The units Sectors counts API requests in.</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>Where an app’s numbers come from: what you type, or an API (3.3).</td>
+</tr>
+<tr>
+<td><strong>Deploy</strong></td>
+<td>Copying your app to a server so it is live on the internet (9.1).</td>
+</tr>
+<tr>
+<td><strong>.env</strong></td>
+<td>A local file that holds secrets as <code>NAME=value</code> lines; never committed (5.3).</td>
+</tr>
+<tr>
+<td><strong>Framework</strong></td>
+<td>A ready-made starter kit of code; Streamlit is one.</td>
+</tr>
+<tr>
+<td><strong>Frontend</strong></td>
+<td>The part of an app you see and click (3.3).</td>
+</tr>
+<tr>
+<td><strong>Git</strong></td>
+<td>A free tool that keeps a history of your project as commits (8.1).</td>
+</tr>
+<tr>
+<td><strong>GitHub</strong></td>
+<td>A website that stores Git repositories online.</td>
+</tr>
+<tr>
+<td><strong>.gitignore</strong></td>
+<td>A list of files Git must never save (8.2).</td>
+</tr>
+<tr>
+<td><strong>Helper</strong></td>
+<td>A small file of ready-made functions; <code>sectors.py</code> is one (5.1).</td>
+</tr>
+<tr>
+<td><strong>Host</strong></td>
+<td>A service that stores, builds and serves your app (9.1).</td>
+</tr>
+<tr>
+<td><strong>IDE</strong></td>
+<td>Integrated development environment: a code editor with extra tools.</td>
+</tr>
+<tr>
+<td><strong>IDX</strong></td>
+<td>The Indonesia Stock Exchange.</td>
+</tr>
+<tr>
+<td><strong>JSON</strong></td>
+<td>A text format for data made of labelled values, such as <code>"sector": "Financials"</code>.</td>
+</tr>
+<tr>
+<td><strong>Localhost</strong></td>
+<td>Your own computer, as an address: <code>http://localhost:8501</code> for a Streamlit app.</td>
+</tr>
+<tr>
+<td><strong>Lot</strong></td>
+<td>The unit IDX shares are bought in: 100 shares.</td>
+</tr>
+<tr>
+<td><strong>Market cap</strong></td>
+<td>Market capitalisation: share price × number of shares, in rupiah.</td>
+</tr>
+<tr>
+<td><strong>MCP</strong></td>
+<td>Model Context Protocol: a standard plug that lets AI tools use outside services (10.1).</td>
+</tr>
+<tr>
+<td><strong>Native app</strong></td>
+<td>An app installed on one operating system, such as a phone app.</td>
+</tr>
+<tr>
+<td><strong>Plan → Implement → Test → Repeat</strong></td>
+<td>The four-step loop for building every feature (4.1).</td>
+</tr>
+<tr>
+<td><strong>Push</strong></td>
+<td>Uploading your commits to GitHub (8.5).</td>
+</tr>
+<tr>
+<td><strong>Repository (repo)</strong></td>
+<td>A project folder together with its full Git history.</td>
+</tr>
+<tr>
+<td><strong>requirements.txt</strong></td>
+<td>The list of Python packages an app needs; the host installs them.</td>
+</tr>
+<tr>
+<td><strong>Secret</strong></td>
+<td>A value that must not be shared, such as an API key or password.</td>
+</tr>
+<tr>
+<td><strong>Secrets (Streamlit)</strong></td>
+<td>Where a deployed app’s secrets live on Streamlit Community Cloud (9.3).</td>
+</tr>
+<tr>
+<td><strong>Server</strong></td>
+<td>A computer in a data centre that keeps an app running for everyone.</td>
+</tr>
+<tr>
+<td><strong>Stage</strong></td>
+<td>Choosing which changes go into the next commit (8.1).</td>
+</tr>
+<tr>
+<td><strong>Streamlit</strong></td>
+<td>A Python framework that turns a script into a web app.</td>
+</tr>
+<tr>
+<td><strong>Streamlit Community Cloud</strong></td>
+<td>Streamlit’s free host for public apps.</td>
+</tr>
+<tr>
+<td><strong>Terminal</strong></td>
+<td>A text window where you type commands.</td>
+</tr>
+<tr>
+<td><strong>Ticker</strong></td>
+<td>A stock’s short code on the exchange, such as BBCA or TLKM.</td>
+</tr>
+<tr>
+<td><strong>Volume</strong></td>
+<td>The number of shares traded in a day.</td>
+</tr>
+<tr>
+<td><strong>Web app</strong></td>
+<td>An app that runs in a browser and is opened with a link (3.2).</td>
+</tr>
+</tbody>
+</table></div>
+
+  </div>
+</section>
+<section class="section" id="s-links">
+  <div class="container">
+    <div class="section-label">Links</div>
+    <h2>Tools</h2>
+    <div class="topic-list"><div class="topic-item"><span class="topic-num">01</span><div class="topic-content">
+<h3>VS Code</h3><p>The editor (P.1).</p>
+<a href="https://code.visualstudio.com" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><svg class="icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>code.visualstudio.com</a></div></div><div class="topic-item"><span class="topic-num">02</span><div class="topic-content">
+<h3>Python</h3><p>Version 3.10 or newer (P.2).</p>
+<a href="https://www.python.org/downloads/" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><svg class="icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>python.org/downloads</a></div></div><div class="topic-item"><span class="topic-num">03</span><div class="topic-content">
+<h3>Git</h3><p>Saves your work (P.3, Module 8).</p>
+<a href="https://git-scm.com/downloads" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><svg class="icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>git-scm.com/downloads</a></div></div><div class="topic-item"><span class="topic-num">04</span><div class="topic-content">
+<h3>GitHub</h3><p>Your account for Copilot and your code (P.4).</p>
+<a href="https://github.com/signup" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><svg class="icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>github.com/signup</a></div></div><div class="topic-item"><span class="topic-num">05</span><div class="topic-content">
+<h3>GitHub Copilot</h3><p>Turn on Copilot Free (P.4).</p>
+<a href="https://github.com/settings/copilot" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><svg class="icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>github.com/settings/copilot</a></div></div><div class="topic-item"><span class="topic-num">06</span><div class="topic-content">
+<h3>Sectors</h3><p>Live IDX data and your API key (P.4, Module 5).</p>
+<a href="https://sectors.app" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><svg class="icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>sectors.app</a></div></div><div class="topic-item"><span class="topic-num">07</span><div class="topic-content">
+<h3>Sectors docs</h3><p>API and MCP server docs (Module 10).</p>
+<a href="https://docs.sectors.app" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><svg class="icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>docs.sectors.app</a></div></div><div class="topic-item"><span class="topic-num">08</span><div class="topic-content">
+<h3>Streamlit Community Cloud</h3><p>Puts your app online (Module 9).</p>
+<a href="https://share.streamlit.io" target="_blank" rel="noopener" class="btn btn-outline btn-sm"><svg class="icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>share.streamlit.io</a></div></div></div>
+  </div>
+</section>
+<div class="container"><nav class="page-nav" aria-label="Previous and next page"><a href="/module-10" class="page-nav-link"><span class="page-nav-label"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Previous</span><span class="page-nav-title">Module 10: Bonus: live data with MCP</span></a></nav></div>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="https://algorit.ma" class="footer-logo" target="_blank" rel="noopener" aria-label="Algoritma">
+      <img class="logo-wordmark logo--on-light" src="assets/algoritma-wordmark-midnight.svg" alt="Algoritma" width="118" height="28" />
+      <img class="logo-wordmark logo--on-dark" src="assets/algoritma-wordmark-cream.svg" alt="Algoritma" width="118" height="28" />
+    </a>
+    <p class="footer-text">Build and ship a live IDX stock app with an AI pair programmer. GitHub Copilot x Sectors Community Meetup, 31 October 2026, Block71 Jakarta.</p>
+    <p class="footer-text footer-text--fine">This session is about building software. Nothing in it, including any number your app shows, is investment advice.</p>
+  </div>
+</footer>
+<script>
+  function currentTheme(){
+    return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  }
+
+  function toggleTheme(){
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.classList.toggle('dark', next === 'dark');
+    try { localStorage.setItem('copilot-sectors-theme', next); } catch (e) {}
+    syncThemeIcon(next);
+  }
+
+  function syncThemeIcon(theme){
+    var sun = document.getElementById('theme-icon-sun');
+    var moon = document.getElementById('theme-icon-moon');
+    // Show the theme you would switch to
+    if (sun) sun.style.display = theme === 'dark' ? 'block' : 'none';
+    if (moon) moon.style.display = theme === 'light' ? 'block' : 'none';
+  }
+
+  function checkNavScroll(){
+    var el = document.getElementById('navLinks');
+    var wrap = document.querySelector('.nav-links-wrap');
+    var left = document.querySelector('.nav-scroll-arrow--left');
+    var right = document.querySelector('.nav-scroll-arrow--right');
+    if (!el || !wrap || !left || !right) return;
+    var maxScroll = el.scrollWidth - el.clientWidth;
+    var showLeft = el.scrollLeft > 4;
+    var showRight = maxScroll > 4 && el.scrollLeft < maxScroll - 4;
+    left.classList.toggle('visible', showLeft);
+    right.classList.toggle('visible', showRight);
+    wrap.classList.toggle('show-left', showLeft);
+    wrap.classList.toggle('show-right', showRight);
+  }
+
+  function scrollNav(dir){
+    var el = document.getElementById('navLinks');
+    if (el) el.scrollBy({ left: dir * 140, behavior: 'smooth' });
+  }
+
+  function copyText(text){
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function(resolve, reject){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
+      document.body.removeChild(ta);
+    });
+  }
+
+  function copyCodeBlock(btn){
+    var block = btn.closest('.code-block');
+    var pre = block ? block.querySelector('pre') : null;
+    if (!pre) return;
+    var tip = btn.querySelector('.code-copy-tip');
+    var original = btn.querySelector('svg').outerHTML;
+    copyText(pre.textContent).then(function(){
+      btn.classList.add('copied');
+      btn.querySelector('svg').outerHTML = '<svg class="icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+      if (tip) tip.textContent = 'Copied';
+      setTimeout(function(){
+        btn.classList.remove('copied');
+        btn.querySelector('svg').outerHTML = original;
+        if (tip) tip.textContent = '';
+      }, 1500);
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', function(){
+    syncThemeIcon(currentTheme());
+    var navLinks = document.getElementById('navLinks');
+    var active = navLinks ? navLinks.querySelector('.nav-link.active') : null;
+    if (active && navLinks) {
+      navLinks.scrollLeft = active.offsetLeft - navLinks.clientWidth / 2 + active.offsetWidth / 2;
+    }
+    checkNavScroll();
+    if (navLinks) navLinks.addEventListener('scroll', checkNavScroll);
+    window.addEventListener('resize', checkNavScroll);
+  });
+
+</script>
+</body>
+</html>

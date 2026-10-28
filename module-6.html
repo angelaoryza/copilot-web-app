@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" class="editorial">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 06: Build your IDX app | Copilot x Sectors</title>
+  <script>
+    (function(){
+      var t = 'light';
+      try { t = localStorage.getItem('copilot-sectors-theme') || 'light'; } catch (e) {}
+      if (t === 'dark') document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average&family=Ubuntu+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Ubuntu+Sans+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/algoritma-mark-midnight.svg" type="image/svg+xml" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Course">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Copilot x Sectors, home">
+      <img class="logo-mark logo--on-light" src="assets/algoritma-mark-midnight.svg" alt="Algoritma" width="24" height="24" />
+      <img class="logo-mark logo--on-dark" src="assets/algoritma-mark-cream.svg" alt="Algoritma" width="24" height="24" />
+      <span class="nav-brand-text">Copilot x Sectors</span>
+    </a>
+    <div class="nav-links-wrap">
+      <button class="nav-scroll-arrow nav-scroll-arrow--left" type="button" onclick="scrollNav(-1)" aria-label="Scroll left" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a><a href="/setup" class="nav-link">Setup</a><a href="/module-1" class="nav-link"><span class="nav-num">01</span>Vibe coding</a><a href="/module-2" class="nav-link"><span class="nav-num">02</span>AI workspace</a><a href="/module-3" class="nav-link"><span class="nav-num">03</span>Web apps</a><a href="/module-4" class="nav-link"><span class="nav-num">04</span>Warm-up</a><a href="/module-5" class="nav-link"><span class="nav-num">05</span>Market data</a><a href="/module-6" class="nav-link active" aria-current="page"><span class="nav-num">06</span>IDX app</a><a href="/module-7" class="nav-link"><span class="nav-num">07</span>Stretch</a><a href="/module-8" class="nav-link"><span class="nav-num">08</span>Git</a><a href="/module-9" class="nav-link"><span class="nav-num">09</span>Ship it</a><a href="/module-10" class="nav-link"><span class="nav-num">10</span>MCP bonus</a><a href="/resources" class="nav-link">Resources</a>
+      </div>
+      <button class="nav-scroll-arrow nav-scroll-arrow--right" type="button" onclick="scrollNav(1)" aria-label="Scroll right" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span></button>
+    </div>
+    <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch between light and dark theme">
+      <svg id="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+<header class="page-header">
+  <div class="container page-header-inner">
+    <div class="page-header-eyebrow"><span class="eyebrow-num">Module 06</span> <span aria-hidden="true">/</span> IDX app</div>
+    <h1>Build your IDX app</h1>
+    <p class="page-header-desc">Same project, one feature per loop.</p>
+    
+  </div>
+</header>
+<main id="main">
+<section class="section section--lead"><div class="container"><p>After the break, you keep building the same <code>app.py</code>. Nothing new to learn: only the loop from 4.1, one feature at a time.</p>
+</div></section>
+<section class="section" id="s-6-1-one-feature-one-loop">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>6.1 One feature, one loop</h2>
+    <div aria-label="Table: Tier, Features, Who" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th>Tier</th>
+<th>Features</th>
+<th>Who</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core</strong></td>
+<td>A price chart</td>
+<td>Everyone</td>
+</tr>
+<tr>
+<td><strong>Level Up</strong></td>
+<td>Metric cards, a date range, friendly error messages</td>
+<td>Most people</td>
+</tr>
+<tr>
+<td><strong>Stretch</strong></td>
+<td>Compare tickers, a financials tab, your own layout</td>
+<td>Fast finishers, or at home (Module 7)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Three tips for every feature:</p>
+<ul class="content-list">
+<li><strong>Start a New Chat</strong> for each feature. A long chat gets crowded and Copilot starts to forget early details.</li>
+<li><strong>Attach the file</strong> with <code>#app.py</code> in every plan prompt, so Copilot sees the latest version.</li>
+<li><strong>The implement prompt is always the same:</strong> “Build exactly the plan above. Change only app.py.” Then click <strong>Keep</strong>, <strong>Rerun</strong>, and test.</li>
+</ul>
+
+  </div>
+</section>
+<section class="section" id="s-6-2-core-a-price-chart">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>6.2 Core: a price chart</h2>
+    <p class="do-it-line"><strong>Plan.</strong><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> in a <strong>New Chat</strong> in <strong>Ask</strong> mode, send:</p>
+<div class="code-block code-block--prompt"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Prompt</div><pre><strong>#app.py #sectors.py I want to add a price chart under the company info.</strong>
+
+Frontend: a line chart of the daily closing price for the last 30 days, with dates along the bottom and price in rupiah up the side, and a small heading, “Closing price, last 30 days”.
+
+Data: use get_daily_prices from sectors.py for the ticker in the text box.
+
+Keep the calculator as it is. Tell me the plan in three to five steps. Don’t write code yet.</pre></div>
+<p><strong>Implement.</strong> Switch to <strong>Agent</strong>: <strong>Build exactly the plan above. Change only app.py.</strong> Click <strong>Keep</strong>.</p>
+<p><strong>Test.</strong></p>
+<ul class="content-list">
+<li>A line chart with about 20 points: there is no trading at weekends</li>
+<li>The last point equals the <strong>last close</strong> shown above it</li>
+<li><code>TLKM</code> redraws the chart; the calculator still works</li>
+</ul>
+<p><strong>Repeat.</strong> If something is off, describe what you see and what you expected, in a new plan prompt. For example: “The chart’s dates overlap and are hard to read. Show fewer dates along the bottom.”</p>
+
+  </div>
+</section>
+<section class="section" id="s-6-3-level-up-metric-cards-date-range-and-friendly-errors">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>6.3 Level Up: metric cards, date range and friendly errors</h2>
+    <p>Run the full loop for each feature: plan in <strong>Ask</strong> with the prompt below, implement in <strong>Agent</strong>, then test.</p>
+<p><strong>Metric cards.</strong> Plan prompt:</p>
+<div class="code-block code-block--prompt"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Prompt</div><pre><strong>#app.py I want to replace the plain company numbers with three metric cards in a row: Last close (Rp with dots), Daily change (as a percent with two decimals, from daily_close_change, which is a fraction), and Market cap (in trillions of rupiah, one decimal). Tell me the plan. Don’t write code yet.</strong></pre></div>
+<p><strong>Test:</strong> three cards side by side; check the maths: −0.0169 shows as <strong>−1.69%</strong>, and 602888959530000 as <strong>Rp 602.9 T</strong>.</p>
+<p><strong>Date range.</strong> Plan prompt:</p>
+<div class="code-block code-block--prompt"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Prompt</div><pre><strong>#app.py I want to choose the chart’s date range. Add a start date and an end date in the sidebar, defaulting to the last 30 days, and use them for the daily prices. If the start is after the end, show a short warning instead. Sectors allows at most 90 days per request, so if I pick more, tell me and use the last 90 days. Tell me the plan. Don’t write code yet.</strong></pre></div>
+<p><strong>Test:</strong> two date pickers in the sidebar that change the chart; a warning for a reversed range and for more than 90 days. (Without the warning, Sectors would quietly send only the most recent 90 days.)</p>
+<p><strong>Friendly errors.</strong> Plan prompt:</p>
+<div class="code-block code-block--prompt"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Prompt</div><pre><strong>#app.py I want every error to be friendly. If the ticker box is empty, ask me to type one. If the ticker doesn’t exist, say “We couldn’t find that ticker on IDX. Try BBCA or TLKM.” For any other problem, sectors.py raises a SectorsError with a plain message: show that message with st.warning. Never show red error text on the page. Tell me the plan. Don’t write code yet.</strong></pre></div>
+<p><strong>Test:</strong> try an empty box, the made-up ticker <code>XXXX</code>, and BBCA again. Each problem gives one plain sentence; BBCA still works.</p>
+<div class="info-box info-box--info"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><path d="M9 18h6"></path><path d="M10 21h4"></path><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"></path></svg></span><div class="info-box-body"><span class="info-box-label">Tip</span> Streamlit reruns your whole file at every click, and every call to Sectors costs credits. When your features work, ask: “Add caching so the same ticker and dates are only fetched once.” Copilot will add <code>@st.cache_data</code>.</div></div>
+
+  </div>
+</section>
+<div class="container"><nav class="page-nav" aria-label="Previous and next page"><a href="/module-5" class="page-nav-link"><span class="page-nav-label"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Previous</span><span class="page-nav-title">Module 05: Connecting to real market data</span></a><a href="/module-7" class="page-nav-link page-nav-link--next"><span class="page-nav-label">Next <svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="page-nav-title">Module 07: Stretch: three features, worked through</span></a></nav></div>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="https://algorit.ma" class="footer-logo" target="_blank" rel="noopener" aria-label="Algoritma">
+      <img class="logo-wordmark logo--on-light" src="assets/algoritma-wordmark-midnight.svg" alt="Algoritma" width="118" height="28" />
+      <img class="logo-wordmark logo--on-dark" src="assets/algoritma-wordmark-cream.svg" alt="Algoritma" width="118" height="28" />
+    </a>
+    <p class="footer-text">Build and ship a live IDX stock app with an AI pair programmer. GitHub Copilot x Sectors Community Meetup, 31 October 2026, Block71 Jakarta.</p>
+    <p class="footer-text footer-text--fine">This session is about building software. Nothing in it, including any number your app shows, is investment advice.</p>
+  </div>
+</footer>
+<script>
+  function currentTheme(){
+    return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  }
+
+  function toggleTheme(){
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.classList.toggle('dark', next === 'dark');
+    try { localStorage.setItem('copilot-sectors-theme', next); } catch (e) {}
+    syncThemeIcon(next);
+  }
+
+  function syncThemeIcon(theme){
+    var sun = document.getElementById('theme-icon-sun');
+    var moon = document.getElementById('theme-icon-moon');
+    // Show the theme you would switch to
+    if (sun) sun.style.display = theme === 'dark' ? 'block' : 'none';
+    if (moon) moon.style.display = theme === 'light' ? 'block' : 'none';
+  }
+
+  function checkNavScroll(){
+    var el = document.getElementById('navLinks');
+    var wrap = document.querySelector('.nav-links-wrap');
+    var left = document.querySelector('.nav-scroll-arrow--left');
+    var right = document.querySelector('.nav-scroll-arrow--right');
+    if (!el || !wrap || !left || !right) return;
+    var maxScroll = el.scrollWidth - el.clientWidth;
+    var showLeft = el.scrollLeft > 4;
+    var showRight = maxScroll > 4 && el.scrollLeft < maxScroll - 4;
+    left.classList.toggle('visible', showLeft);
+    right.classList.toggle('visible', showRight);
+    wrap.classList.toggle('show-left', showLeft);
+    wrap.classList.toggle('show-right', showRight);
+  }
+
+  function scrollNav(dir){
+    var el = document.getElementById('navLinks');
+    if (el) el.scrollBy({ left: dir * 140, behavior: 'smooth' });
+  }
+
+  function copyText(text){
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function(resolve, reject){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
+      document.body.removeChild(ta);
+    });
+  }
+
+  function copyCodeBlock(btn){
+    var block = btn.closest('.code-block');
+    var pre = block ? block.querySelector('pre') : null;
+    if (!pre) return;
+    var tip = btn.querySelector('.code-copy-tip');
+    var original = btn.querySelector('svg').outerHTML;
+    copyText(pre.textContent).then(function(){
+      btn.classList.add('copied');
+      btn.querySelector('svg').outerHTML = '<svg class="icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+      if (tip) tip.textContent = 'Copied';
+      setTimeout(function(){
+        btn.classList.remove('copied');
+        btn.querySelector('svg').outerHTML = original;
+        if (tip) tip.textContent = '';
+      }, 1500);
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', function(){
+    syncThemeIcon(currentTheme());
+    var navLinks = document.getElementById('navLinks');
+    var active = navLinks ? navLinks.querySelector('.nav-link.active') : null;
+    if (active && navLinks) {
+      navLinks.scrollLeft = active.offsetLeft - navLinks.clientWidth / 2 + active.offsetWidth / 2;
+    }
+    checkNavScroll();
+    if (navLinks) navLinks.addEventListener('scroll', checkNavScroll);
+    window.addEventListener('resize', checkNavScroll);
+  });
+
+</script>
+</body>
+</html>

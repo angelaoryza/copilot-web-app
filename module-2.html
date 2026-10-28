@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" class="editorial">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 02: Your AI workspace | Copilot x Sectors</title>
+  <script>
+    (function(){
+      var t = 'light';
+      try { t = localStorage.getItem('copilot-sectors-theme') || 'light'; } catch (e) {}
+      if (t === 'dark') document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average&family=Ubuntu+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Ubuntu+Sans+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/algoritma-mark-midnight.svg" type="image/svg+xml" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Course">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Copilot x Sectors, home">
+      <img class="logo-mark logo--on-light" src="assets/algoritma-mark-midnight.svg" alt="Algoritma" width="24" height="24" />
+      <img class="logo-mark logo--on-dark" src="assets/algoritma-mark-cream.svg" alt="Algoritma" width="24" height="24" />
+      <span class="nav-brand-text">Copilot x Sectors</span>
+    </a>
+    <div class="nav-links-wrap">
+      <button class="nav-scroll-arrow nav-scroll-arrow--left" type="button" onclick="scrollNav(-1)" aria-label="Scroll left" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a><a href="/setup" class="nav-link">Setup</a><a href="/module-1" class="nav-link"><span class="nav-num">01</span>Vibe coding</a><a href="/module-2" class="nav-link active" aria-current="page"><span class="nav-num">02</span>AI workspace</a><a href="/module-3" class="nav-link"><span class="nav-num">03</span>Web apps</a><a href="/module-4" class="nav-link"><span class="nav-num">04</span>Warm-up</a><a href="/module-5" class="nav-link"><span class="nav-num">05</span>Market data</a><a href="/module-6" class="nav-link"><span class="nav-num">06</span>IDX app</a><a href="/module-7" class="nav-link"><span class="nav-num">07</span>Stretch</a><a href="/module-8" class="nav-link"><span class="nav-num">08</span>Git</a><a href="/module-9" class="nav-link"><span class="nav-num">09</span>Ship it</a><a href="/module-10" class="nav-link"><span class="nav-num">10</span>MCP bonus</a><a href="/resources" class="nav-link">Resources</a>
+      </div>
+      <button class="nav-scroll-arrow nav-scroll-arrow--right" type="button" onclick="scrollNav(1)" aria-label="Scroll right" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span></button>
+    </div>
+    <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch between light and dark theme">
+      <svg id="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+<header class="page-header">
+  <div class="container page-header-inner">
+    <div class="page-header-eyebrow"><span class="eyebrow-num">Module 02</span> <span aria-hidden="true">/</span> AI workspace</div>
+    <h1>Your AI workspace</h1>
+    <p class="page-header-desc">VS Code, and Copilot&#x27;s two modes.</p>
+    
+  </div>
+</header>
+<main id="main">
+
+<section class="section" id="s-2-1-the-tools-are-chosen-for-you">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>2.1 The tools are chosen for you</h2>
+    <p>Choosing tools can eat a whole weekend. The tools matter less than <strong>momentum</strong>: the best stack is the one you actually open and use. Today’s is chosen for you, so you can start building now:</p>
+<div aria-label="Table: Job, Today’s tool" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th>Job</th>
+<th>Today’s tool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Editor and AI pair programmer</td>
+<td><strong>VS Code</strong> with <strong>GitHub Copilot</strong></td>
+</tr>
+<tr>
+<td>App framework</td>
+<td><strong>Streamlit</strong>, which turns a Python file into a web page</td>
+</tr>
+<tr>
+<td>Live data</td>
+<td>The <strong>Sectors API</strong>, through <code>sectors.py</code></td>
+</tr>
+<tr>
+<td>Save points and hosting</td>
+<td><strong>Git</strong>, <strong>GitHub</strong> and <strong>Streamlit Community Cloud</strong></td>
+</tr>
+</tbody>
+</table></div>
+
+  </div>
+</section>
+<section class="section" id="s-2-2-a-tour-of-vs-code">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>2.2 A tour of VS Code</h2>
+    <p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> open the starter kit folder in VS Code (<strong>File → Open Folder</strong>). Find these five areas:</p>
+<div aria-label="Table: Area, Where, What you use it for" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th>Area</th>
+<th>Where</th>
+<th>What you use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Explorer</strong></td>
+<td>Left bar, top icon</td>
+<td>Open the files in your project</td>
+</tr>
+<tr>
+<td><strong>Editor</strong></td>
+<td>Centre</td>
+<td>Read a file</td>
+</tr>
+<tr>
+<td><strong>Terminal</strong></td>
+<td><strong>View → Terminal</strong></td>
+<td>Start and stop the app, read errors</td>
+</tr>
+<tr>
+<td><strong>Source Control</strong></td>
+<td>Left bar (<code>Ctrl+Shift+G</code>)</td>
+<td>Save points and GitHub (Module 8)</td>
+</tr>
+<tr>
+<td><strong>Copilot Chat</strong></td>
+<td>Chat icon, title bar</td>
+<td>Talk to Copilot, switch modes</td>
+</tr>
+</tbody>
+</table></div>
+
+  </div>
+</section>
+<section class="section" id="s-2-3-ask-and-agent">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>2.3 Ask and Agent</h2>
+    <p>At the bottom of the Copilot Chat box is a picker that sets the <strong>mode</strong> <span class="verify">[VERIFY: the picker’s label and position in the current VS Code]</span>. Today you use two:</p>
+<div aria-label="Table: Mode, What it does, Use it when" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th>Mode</th>
+<th>What it does</th>
+<th>Use it when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ask</strong></td>
+<td>Answers, explains and plans; never changes your files</td>
+<td>You want to understand something or plan a feature</td>
+</tr>
+<tr>
+<td><strong>Agent</strong></td>
+<td>Works in several steps: creates and edits files, runs commands, reads errors, tries again</td>
+<td>You want something built or changed</td>
+</tr>
+</tbody>
+</table></div>
+<p>A simple rule: <strong>Ask to think, Agent to do.</strong> When Agent finishes, it shows what it changed: removed lines in red, added lines in green. You click <strong>Keep</strong> to accept the changes or <strong>Undo</strong> to throw them away <span class="verify">[VERIFY: Keep / Undo labels]</span>. If Agent asks permission to run a command in the terminal, allow it only if you understand what it does <span class="verify">[VERIFY: label of the allow button]</span>.</p>
+
+  </div>
+</section>
+<section class="section" id="s-2-4-try-ask-mode">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>2.4 Try Ask mode</h2>
+    <p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> switch Copilot Chat to <strong>Ask</strong> and send:</p>
+<div class="code-block code-block--prompt"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Prompt</div><pre><strong>I’m brand new to this project. Look at the files and folders in this project and tell me what each one is for, in one short bullet point each. Don’t change anything.</strong></pre></div>
+<div class="info-box info-box--success"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9.5"></polyline></svg></span><div class="info-box-body"><span class="info-box-label">What to look for</span> <p>a bullet for each file and folder, including <code>app.py</code> (almost empty) and <code>sectors.py</code> (the helper that gets stock data); no file changed in the Explorer.</p></div></div>
+
+  </div>
+</section>
+<section class="section" id="s-2-5-try-agent-mode-with-a-lazy-prompt">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>2.5 Try Agent mode with a lazy prompt</h2>
+    <p>Now see what Agent does when you give it almost nothing to go on.</p>
+<p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> click <strong>New Chat</strong> (<strong>+</strong>), switch to <strong>Agent</strong>, and send:</p>
+<div class="code-block code-block--prompt"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Prompt</div><pre><strong>Create a web for investment calculator</strong></pre></div>
+<p>Watch it work. It plans, creates one or more files, and may ask to run a command. When it stops, read its summary and answer these questions:</p>
+<div aria-label="Table: Question, What Agent probably did" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th>Question</th>
+<th>What Agent probably did</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Which files did it create or change?</td>
+<td>Picked file names itself, maybe even rewrote <code>app.py</code></td>
+</tr>
+<tr>
+<td>What does the calculator calculate?</td>
+<td>Chose its own formula: savings, a loan, or something else</td>
+</tr>
+<tr>
+<td>What inputs and currency does it use?</td>
+<td>Guessed, often in dollars rather than rupiah</td>
+</tr>
+<tr>
+<td>What kind of web page is it?</td>
+<td>Picked its own tools, maybe plain HTML instead of Streamlit</td>
+</tr>
+</tbody>
+</table></div>
+<div class="info-box info-box--success"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9.5"></polyline></svg></span><div class="info-box-body"><span class="info-box-label">What to look for</span> <p>something that probably works, built from guesses. Agent made every decision because you made none. Click <strong>Undo</strong> so your folder is back to how it started.</p></div></div>
+<p>The lesson: Agent is powerful but cannot read your mind. To make those decisions yourself, you need to know what a web app is made of. That is the next module.</p>
+
+  </div>
+</section>
+<div class="container"><nav class="page-nav" aria-label="Previous and next page"><a href="/module-1" class="page-nav-link"><span class="page-nav-label"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Previous</span><span class="page-nav-title">Module 01: What is vibe coding (and who cares?)</span></a><a href="/module-3" class="page-nav-link page-nav-link--next"><span class="page-nav-label">Next <svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="page-nav-title">Module 03: How web apps work</span></a></nav></div>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="https://algorit.ma" class="footer-logo" target="_blank" rel="noopener" aria-label="Algoritma">
+      <img class="logo-wordmark logo--on-light" src="assets/algoritma-wordmark-midnight.svg" alt="Algoritma" width="118" height="28" />
+      <img class="logo-wordmark logo--on-dark" src="assets/algoritma-wordmark-cream.svg" alt="Algoritma" width="118" height="28" />
+    </a>
+    <p class="footer-text">Build and ship a live IDX stock app with an AI pair programmer. GitHub Copilot x Sectors Community Meetup, 31 October 2026, Block71 Jakarta.</p>
+    <p class="footer-text footer-text--fine">This session is about building software. Nothing in it, including any number your app shows, is investment advice.</p>
+  </div>
+</footer>
+<script>
+  function currentTheme(){
+    return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  }
+
+  function toggleTheme(){
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.classList.toggle('dark', next === 'dark');
+    try { localStorage.setItem('copilot-sectors-theme', next); } catch (e) {}
+    syncThemeIcon(next);
+  }
+
+  function syncThemeIcon(theme){
+    var sun = document.getElementById('theme-icon-sun');
+    var moon = document.getElementById('theme-icon-moon');
+    // Show the theme you would switch to
+    if (sun) sun.style.display = theme === 'dark' ? 'block' : 'none';
+    if (moon) moon.style.display = theme === 'light' ? 'block' : 'none';
+  }
+
+  function checkNavScroll(){
+    var el = document.getElementById('navLinks');
+    var wrap = document.querySelector('.nav-links-wrap');
+    var left = document.querySelector('.nav-scroll-arrow--left');
+    var right = document.querySelector('.nav-scroll-arrow--right');
+    if (!el || !wrap || !left || !right) return;
+    var maxScroll = el.scrollWidth - el.clientWidth;
+    var showLeft = el.scrollLeft > 4;
+    var showRight = maxScroll > 4 && el.scrollLeft < maxScroll - 4;
+    left.classList.toggle('visible', showLeft);
+    right.classList.toggle('visible', showRight);
+    wrap.classList.toggle('show-left', showLeft);
+    wrap.classList.toggle('show-right', showRight);
+  }
+
+  function scrollNav(dir){
+    var el = document.getElementById('navLinks');
+    if (el) el.scrollBy({ left: dir * 140, behavior: 'smooth' });
+  }
+
+  function copyText(text){
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function(resolve, reject){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
+      document.body.removeChild(ta);
+    });
+  }
+
+  function copyCodeBlock(btn){
+    var block = btn.closest('.code-block');
+    var pre = block ? block.querySelector('pre') : null;
+    if (!pre) return;
+    var tip = btn.querySelector('.code-copy-tip');
+    var original = btn.querySelector('svg').outerHTML;
+    copyText(pre.textContent).then(function(){
+      btn.classList.add('copied');
+      btn.querySelector('svg').outerHTML = '<svg class="icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+      if (tip) tip.textContent = 'Copied';
+      setTimeout(function(){
+        btn.classList.remove('copied');
+        btn.querySelector('svg').outerHTML = original;
+        if (tip) tip.textContent = '';
+      }, 1500);
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', function(){
+    syncThemeIcon(currentTheme());
+    var navLinks = document.getElementById('navLinks');
+    var active = navLinks ? navLinks.querySelector('.nav-link.active') : null;
+    if (active && navLinks) {
+      navLinks.scrollLeft = active.offsetLeft - navLinks.clientWidth / 2 + active.offsetWidth / 2;
+    }
+    checkNavScroll();
+    if (navLinks) navLinks.addEventListener('scroll', checkNavScroll);
+    window.addEventListener('resize', checkNavScroll);
+  });
+
+</script>
+</body>
+</html>

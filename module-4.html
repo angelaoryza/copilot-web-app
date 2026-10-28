@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" class="editorial">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 04: Warm-up: Investment Goal Calculator | Copilot x Sectors</title>
+  <script>
+    (function(){
+      var t = 'light';
+      try { t = localStorage.getItem('copilot-sectors-theme') || 'light'; } catch (e) {}
+      if (t === 'dark') document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average&family=Ubuntu+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Ubuntu+Sans+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/algoritma-mark-midnight.svg" type="image/svg+xml" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Course">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Copilot x Sectors, home">
+      <img class="logo-mark logo--on-light" src="assets/algoritma-mark-midnight.svg" alt="Algoritma" width="24" height="24" />
+      <img class="logo-mark logo--on-dark" src="assets/algoritma-mark-cream.svg" alt="Algoritma" width="24" height="24" />
+      <span class="nav-brand-text">Copilot x Sectors</span>
+    </a>
+    <div class="nav-links-wrap">
+      <button class="nav-scroll-arrow nav-scroll-arrow--left" type="button" onclick="scrollNav(-1)" aria-label="Scroll left" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a><a href="/setup" class="nav-link">Setup</a><a href="/module-1" class="nav-link"><span class="nav-num">01</span>Vibe coding</a><a href="/module-2" class="nav-link"><span class="nav-num">02</span>AI workspace</a><a href="/module-3" class="nav-link"><span class="nav-num">03</span>Web apps</a><a href="/module-4" class="nav-link active" aria-current="page"><span class="nav-num">04</span>Warm-up</a><a href="/module-5" class="nav-link"><span class="nav-num">05</span>Market data</a><a href="/module-6" class="nav-link"><span class="nav-num">06</span>IDX app</a><a href="/module-7" class="nav-link"><span class="nav-num">07</span>Stretch</a><a href="/module-8" class="nav-link"><span class="nav-num">08</span>Git</a><a href="/module-9" class="nav-link"><span class="nav-num">09</span>Ship it</a><a href="/module-10" class="nav-link"><span class="nav-num">10</span>MCP bonus</a><a href="/resources" class="nav-link">Resources</a>
+      </div>
+      <button class="nav-scroll-arrow nav-scroll-arrow--right" type="button" onclick="scrollNav(1)" aria-label="Scroll right" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span></button>
+    </div>
+    <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch between light and dark theme">
+      <svg id="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+<header class="page-header">
+  <div class="container page-header-inner">
+    <div class="page-header-eyebrow"><span class="eyebrow-num">Module 04</span> <span aria-hidden="true">/</span> Warm-up</div>
+    <h1>Warm-up: Investment Goal Calculator</h1>
+    <p class="page-header-desc">Your first app, and the loop you use all afternoon.</p>
+    
+  </div>
+</header>
+<main id="main">
+<section class="section section--lead"><div class="container"><p>The warm-up needs no API key. You enter a monthly saving, a number of years and an expected yearly return; it shows the final amount and a growth chart. You build it in <code>app.py</code>: this is the start of the one project you grow all afternoon.</p>
+</div></section>
+<section class="section" id="s-4-1-the-framework-plan-implement-test-repeat">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>4.1 The framework: Plan → Implement → Test → Repeat</h2>
+    <p>Every feature you build today, in this module and the next two, goes round the same four steps:</p>
+<div class="capability-list"><div class="capability-item fade-up"><div class="capability-icon">01</div><div class="capability-body"><h3>Plan <span class="mode-tag">Ask</span></h3><p>Describe what you want using the three parts from 3.3; read the plan Copilot gives back and correct it</p><p class="capability-done"><span class="capability-done-label">Done when</span> The plan has only what you asked for</p></div></div><div class="capability-item fade-up"><div class="capability-icon">02</div><div class="capability-body"><h3>Implement <span class="mode-tag">Agent</span></h3><p>Tell Agent to build exactly that plan, and in which file</p><p class="capability-done"><span class="capability-done-label">Done when</span> Agent says it is finished and you click <strong>Keep</strong></p></div></div><div class="capability-item fade-up"><div class="capability-icon">03</div><div class="capability-body"><h3>Test <span class="mode-tag">(your browser)</span></h3><p>Run the app, try it, and check one number by hand</p><p class="capability-done"><span class="capability-done-label">Done when</span> Every check in “What to look for” passes</p></div></div><div class="capability-item fade-up"><div class="capability-icon">04</div><div class="capability-body"><h3>Repeat <span class="mode-tag">Ask, then Agent</span></h3><p>Pick one small improvement and go round again</p><p class="capability-done"><span class="capability-done-label">Done when</span> You are happy with this feature</p></div></div></div>
+<p>Planning in Ask mode is cheap: a plan is easy to change, code is not. And the loop stays small on purpose: one feature at a time, so when something goes wrong, you know which change caused it.</p>
+
+  </div>
+</section>
+<section class="section" id="s-4-2-plan">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>4.2 Plan</h2>
+    <p class="do-it-line">First, understand the tool. <span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> open a <strong>New Chat</strong> in <strong>Ask</strong> mode and send:</p>
+<div class="code-block code-block--prompt"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Prompt</div><pre><strong>I’ve never written code. In plain words, explain what Streamlit is and how a Python file becomes a web page I can open in my browser.</strong>
+
+Use one everyday analogy. Tell me what command starts the app and what address I open. Keep it under 150 words and don’t write any code yet.</pre></div>
+<div class="info-box info-box--success"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9.5"></polyline></svg></span><div class="info-box-body"><span class="info-box-label">What to look for</span> <p>the command <code>streamlit run</code>; the address <code>localhost:8501</code>; the page updating each time you change an input.</p></div></div>
+<p class="do-it-line">Now plan the calculator. A planning prompt reads like a brief to a colleague: the purpose, then the three parts of the app, then the limits, then what you want back. <span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> in the same chat, send:</p>
+<div class="code-block code-block--prompt"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Prompt</div><pre><strong>I want to build a simple Investment Goal Calculator as a Streamlit app.</strong>
+
+Purpose: help someone see how a monthly saving grows over time.
+
+Frontend: a title; three inputs (monthly saving in rupiah, number of years, expected yearly return in percent); one big result showing the final amount; a line chart of the total year by year. Clean and simple, one column, rupiah shown like Rp 1.000.000.
+
+Backend: the money is added at the end of each month and grows every month.
+
+Data: only what I type in; no internet data yet.
+
+Limits: put everything in app.py; only use packages already in requirements.txt; don’t touch sectors.py.
+
+Your task: tell me your plan in short steps and which Streamlit pieces you would use for each part. Don’t write any code yet, I’m still planning.</pre></div>
+<div class="info-box info-box--success"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9.5"></polyline></svg></span><div class="info-box-body"><span class="info-box-label">What to look for</span> <p>steps that name pieces such as <code>st.number_input</code>, <code>st.metric</code> and <code>st.line_chart</code>; only <code>app.py</code>. If the plan adds something you did not ask for, say so now, for example: “Leave out the inflation input.”</p></div></div>
+
+  </div>
+</section>
+<section class="section" id="s-4-3-implement">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>4.3 Implement</h2>
+    <p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> switch the <strong>same chat</strong> to <strong>Agent</strong> mode, so it still sees the plan, and send:</p>
+<div class="code-block code-block--prompt"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Prompt</div><pre><strong>Build the calculator exactly as in the plan above.</strong>
+
+Write it in app.py and don’t change any other file. When you’re done, tell me the command to run it.</pre></div>
+<div class="info-box info-box--success"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9.5"></polyline></svg></span><div class="info-box-body"><span class="info-box-label">What to look for</span> <p>inputs and a chart in <code>app.py</code>; the command <code>streamlit run app.py</code> in the reply; no other file changed. Read the summary, then click <strong>Keep</strong>.</p></div></div>
+
+  </div>
+</section>
+<section class="section" id="s-4-4-test">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>4.4 Test</h2>
+    <p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> in the terminal, run <code>streamlit run app.py</code>. Your browser opens <code>http://localhost:8501</code>; if not, <code>Ctrl</code>-click (<code>Cmd</code>-click on a Mac) the link in the terminal.</p>
+<div aria-label="Table: Action, How" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th>Action</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Start</strong> the app</td>
+<td><code>streamlit run app.py</code> in the terminal</td>
+</tr>
+<tr>
+<td><strong>See</strong> the app</td>
+<td>Open <code>http://localhost:8501</code></td>
+</tr>
+<tr>
+<td><strong>Stop</strong> the app</td>
+<td>Click in the terminal and press <code>Ctrl+C</code></td>
+</tr>
+<tr>
+<td><strong>See a change</strong></td>
+<td>After Agent changes the file, click <strong>Rerun</strong> at the top right of the page</td>
+</tr>
+</tbody>
+</table></div>
+<p>Now <strong>check what comes back</strong>. A page that looks good can still calculate wrongly, so test with numbers you can work out yourself:</p>
+<ul class="content-list">
+<li>Rp 1.000.000 a month for 10 years at <strong>0%</strong> return must give exactly <strong>Rp 120.000.000</strong>, because 1 million × 12 months × 10 years.</li>
+<li>At <strong>6%</strong> it should be about <strong>Rp 163.9 million</strong>. If you see about Rp 162.5 million, Copilot turned the yearly rate into a monthly one another way; ask it which it used.</li>
+</ul>
+<p>If the 0% case is wrong, the formula is wrong, however good the page looks. Paste what you typed and what you saw into the chat and ask Agent to fix it.</p>
+
+  </div>
+</section>
+<section class="section" id="s-4-5-repeat">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>4.5 Repeat</h2>
+    <p class="do-it-line">Go round the loop once more with one small improvement. <span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> in <strong>Ask</strong> mode, send:</p>
+<div class="code-block code-block--prompt"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Prompt</div><pre><strong>I want two small changes to my calculator in #app.py: show the final amount with dots between thousands and no decimals, like Rp 163.879.347, and add a small grey line under the result that says “A simple estimate, not financial advice.” What would you change? Don’t write code yet.</strong></pre></div>
+<p>Typing <code>#app.py</code> attaches the file to your message, so Copilot reads the latest version. If the plan touches only those two things, switch to <strong>Agent</strong> and send: <strong>Make exactly those two changes. Change nothing else.</strong> Click <strong>Keep</strong>, then <strong>Rerun</strong>.</p>
+<div class="info-box info-box--success"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9.5"></polyline></svg></span><div class="info-box-body"><span class="info-box-label">What to look for</span> <p>the 6% result now reads <strong>Rp 163.879.347</strong>; the grey line is there; the 0% check from 4.4 still gives <strong>Rp 120.000.000</strong>. Testing again after every change is the habit.</p></div></div>
+
+  </div>
+</section>
+<section class="section" id="s-4-6-your-turn-make-it-your-own">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>4.6 Your turn: make it your own</h2>
+    <p>Now run the whole loop by yourself on the calculator you just built. Choose <strong>one</strong> tweak, from the ideas below or your own:</p>
+<div aria-label="Table: Kind of tweak, Ideas" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th>Kind of tweak</th>
+<th>Ideas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add a feature</strong></td>
+<td>Show the total you put in next to the final amount, and the difference as “growth”; add a starting amount for money you already have; add a goal amount and say whether you reach it</td>
+</tr>
+<tr>
+<td><strong>Add styling</strong></td>
+<td>A one-line introduction under the title; the inputs in the sidebar; the results in two columns side by side; a different colour for the chart</td>
+</tr>
+<tr>
+<td><strong>Tweak an existing feature</strong></td>
+<td>Allow up to 40 years; start the expected return at 8%; show the chart month by month instead of year by year; show the result in millions, like Rp 163.9 juta</td>
+</tr>
+</tbody>
+</table></div>
+<p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span></p>
+<div class="install-steps"><div class="install-step"><div class="install-step-line"><div class="install-step-dot">1</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-title">Plan</div><div class="install-step-desc"><p>start a <strong>New Chat</strong> in <strong>Ask</strong> mode and attach the file with <code>#app.py</code>. Say which part of the app changes (frontend, backend or data, as in 3.3) and what must stay the same, and end with “Tell me the plan. Don’t write code yet.” For example:</p>
+<div class="code-block code-block--prompt"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Prompt</div><pre><strong>#app.py I want to add a starting amount: money I already have on day one, which grows at the same return. Put the input above the monthly saving, starting at Rp 0. Everything else stays the same. Tell me the plan. Don’t write code yet.</strong></pre></div></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">2</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-title">Implement</div><div class="install-step-desc"><p>switch to <strong>Agent</strong> and send: <strong>Make exactly that change. Change only app.py.</strong> Click <strong>Keep</strong>, then <strong>Rerun</strong>.</p></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">3</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-title">Test</div><div class="install-step-desc"><p>check that your tweak does what you asked, then run the 0% check from 4.4 again. If your tweak changes the maths on purpose, work out one new case by hand first: with a starting amount of Rp 10.000.000, the 0% case must give <strong>Rp 130.000.000</strong>.</p></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">4</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-title">Repeat</div><div class="install-step-desc"><p>a second small tweak, if time allows.</p></div></div></div></div>
+<div class="info-box info-box--success"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9.5"></polyline></svg></span><div class="info-box-body"><span class="info-box-label">What to look for</span> <p>only the part you named has changed; the other numbers are the same as before.</p></div></div>
+<p>If a tweak breaks the app and two fix attempts do not help, click <strong>Undo</strong>. Your tweak stays in the project: in the next module you connect this same calculator to real market data.</p>
+
+  </div>
+</section>
+<div class="container"><nav class="page-nav" aria-label="Previous and next page"><a href="/module-3" class="page-nav-link"><span class="page-nav-label"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Previous</span><span class="page-nav-title">Module 03: How web apps work</span></a><a href="/module-5" class="page-nav-link page-nav-link--next"><span class="page-nav-label">Next <svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="page-nav-title">Module 05: Connecting to real market data</span></a></nav></div>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="https://algorit.ma" class="footer-logo" target="_blank" rel="noopener" aria-label="Algoritma">
+      <img class="logo-wordmark logo--on-light" src="assets/algoritma-wordmark-midnight.svg" alt="Algoritma" width="118" height="28" />
+      <img class="logo-wordmark logo--on-dark" src="assets/algoritma-wordmark-cream.svg" alt="Algoritma" width="118" height="28" />
+    </a>
+    <p class="footer-text">Build and ship a live IDX stock app with an AI pair programmer. GitHub Copilot x Sectors Community Meetup, 31 October 2026, Block71 Jakarta.</p>
+    <p class="footer-text footer-text--fine">This session is about building software. Nothing in it, including any number your app shows, is investment advice.</p>
+  </div>
+</footer>
+<script>
+  function currentTheme(){
+    return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  }
+
+  function toggleTheme(){
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.classList.toggle('dark', next === 'dark');
+    try { localStorage.setItem('copilot-sectors-theme', next); } catch (e) {}
+    syncThemeIcon(next);
+  }
+
+  function syncThemeIcon(theme){
+    var sun = document.getElementById('theme-icon-sun');
+    var moon = document.getElementById('theme-icon-moon');
+    // Show the theme you would switch to
+    if (sun) sun.style.display = theme === 'dark' ? 'block' : 'none';
+    if (moon) moon.style.display = theme === 'light' ? 'block' : 'none';
+  }
+
+  function checkNavScroll(){
+    var el = document.getElementById('navLinks');
+    var wrap = document.querySelector('.nav-links-wrap');
+    var left = document.querySelector('.nav-scroll-arrow--left');
+    var right = document.querySelector('.nav-scroll-arrow--right');
+    if (!el || !wrap || !left || !right) return;
+    var maxScroll = el.scrollWidth - el.clientWidth;
+    var showLeft = el.scrollLeft > 4;
+    var showRight = maxScroll > 4 && el.scrollLeft < maxScroll - 4;
+    left.classList.toggle('visible', showLeft);
+    right.classList.toggle('visible', showRight);
+    wrap.classList.toggle('show-left', showLeft);
+    wrap.classList.toggle('show-right', showRight);
+  }
+
+  function scrollNav(dir){
+    var el = document.getElementById('navLinks');
+    if (el) el.scrollBy({ left: dir * 140, behavior: 'smooth' });
+  }
+
+  function copyText(text){
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function(resolve, reject){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
+      document.body.removeChild(ta);
+    });
+  }
+
+  function copyCodeBlock(btn){
+    var block = btn.closest('.code-block');
+    var pre = block ? block.querySelector('pre') : null;
+    if (!pre) return;
+    var tip = btn.querySelector('.code-copy-tip');
+    var original = btn.querySelector('svg').outerHTML;
+    copyText(pre.textContent).then(function(){
+      btn.classList.add('copied');
+      btn.querySelector('svg').outerHTML = '<svg class="icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+      if (tip) tip.textContent = 'Copied';
+      setTimeout(function(){
+        btn.classList.remove('copied');
+        btn.querySelector('svg').outerHTML = original;
+        if (tip) tip.textContent = '';
+      }, 1500);
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', function(){
+    syncThemeIcon(currentTheme());
+    var navLinks = document.getElementById('navLinks');
+    var active = navLinks ? navLinks.querySelector('.nav-link.active') : null;
+    if (active && navLinks) {
+      navLinks.scrollLeft = active.offsetLeft - navLinks.clientWidth / 2 + active.offsetWidth / 2;
+    }
+    checkNavScroll();
+    if (navLinks) navLinks.addEventListener('scroll', checkNavScroll);
+    window.addEventListener('resize', checkNavScroll);
+  });
+
+</script>
+</body>
+</html>

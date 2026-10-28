@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="572.4pt" height="202.896pt" viewBox="0 0 572.4 202.896" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-28T18:30:47.029762</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 202.896 
+L 572.4 202.896 
+L 572.4 0 
+L 0 0 
+z
+" style="fill: #faf6ed"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 22.824 153.5616 
+L 105.966 153.5616 
+Q 112.662 153.5616 112.662 146.9088 
+L 112.662 72.6192 
+Q 112.662 65.9664 105.966 65.9664 
+L 22.824 65.9664 
+Q 16.128 65.9664 16.128 72.6192 
+L 16.128 146.9088 
+Q 16.128 153.5616 22.824 153.5616 
+z
+" clip-path="url(#p7746c963be)" style="fill: #fffdf8; stroke: #3e526a; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 170.694 153.5616 
+L 253.836 153.5616 
+Q 260.532 153.5616 260.532 146.9088 
+L 260.532 72.6192 
+Q 260.532 65.9664 253.836 65.9664 
+L 170.694 65.9664 
+Q 163.998 65.9664 163.998 72.6192 
+L 163.998 146.9088 
+Q 163.998 153.5616 170.694 153.5616 
+z
+" clip-path="url(#p7746c963be)" style="fill: #fffdf8; stroke: #3e526a; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 318.564 153.5616 
+L 401.706 153.5616 
+Q 408.402 153.5616 408.402 146.9088 
+L 408.402 72.6192 
+Q 408.402 65.9664 401.706 65.9664 
+L 318.564 65.9664 
+Q 311.868 65.9664 311.868 72.6192 
+L 311.868 146.9088 
+Q 311.868 153.5616 318.564 153.5616 
+z
+" clip-path="url(#p7746c963be)" style="fill: #fffdf8; stroke: #3e526a; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 466.434 153.5616 
+L 549.576 153.5616 
+Q 556.272 153.5616 556.272 146.9088 
+L 556.272 72.6192 
+Q 556.272 65.9664 549.576 65.9664 
+L 466.434 65.9664 
+Q 459.738 65.9664 459.738 72.6192 
+L 459.738 146.9088 
+Q 459.738 153.5616 466.434 153.5616 
+z
+" clip-path="url(#p7746c963be)" style="fill: #fffdf8; stroke: #3e526a; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 116.893727 109.764 
+Q 138.328837 109.764 157.975093 109.764 
+" clip-path="url(#p7746c963be)" style="fill: none; stroke: #3e526a; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 152.375093 106.964 
+L 157.975093 109.764 
+L 152.375093 112.564 
+z
+" clip-path="url(#p7746c963be)" style="fill: #3e526a; stroke: #3e526a; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 264.763727 109.764 
+Q 286.198837 109.764 305.845093 109.764 
+" clip-path="url(#p7746c963be)" style="fill: none; stroke: #3e526a; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 300.245093 106.964 
+L 305.845093 109.764 
+L 300.245093 112.564 
+z
+" clip-path="url(#p7746c963be)" style="fill: #3e526a; stroke: #3e526a; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 412.633727 109.764 
+Q 434.068837 109.764 453.715093 109.764 
+" clip-path="url(#p7746c963be)" style="fill: none; stroke: #3e526a; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 448.115093 106.964 
+L 453.715093 109.764 
+L 448.115093 112.564 
+z
+" clip-path="url(#p7746c963be)" style="fill: #3e526a; stroke: #3e526a; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 13px; font-family: 'Average'; text-anchor: middle; fill: #001017" x="286.2" y="21.06" transform="rotate(-0 286.2 21.06)">From your folder to GitHub</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 500; font-size: 10.5px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #001017" x="64.395" y="89.761549" transform="rotate(-0 64.395 89.761549)">Your folder</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 9px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #4a535c" transform="translate(26.030391 122.579437)">You (and Copilot)</text>
+    <text style="font-size: 9px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #4a535c" transform="translate(37.205859 135.179438)">change files</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 500; font-size: 10.5px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #001017" x="212.265" y="89.761549" transform="rotate(-0 212.265 89.761549)">Staged</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #4a535c" transform="translate(179.353125 122.579437)">You pick which</text>
+    <text style="font-size: 9px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #4a535c" transform="translate(175.447266 135.179438)">changes to save</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 500; font-size: 10.5px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #001017" x="360.135" y="89.761549" transform="rotate(-0 360.135 89.761549)">Commit</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 9px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #4a535c" transform="translate(321.209297 116.279438)">A save point with</text>
+    <text style="font-size: 9px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #4a535c" transform="translate(327.257578 127.980141)">a message, on</text>
+    <text style="font-size: 9px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #4a535c" transform="translate(334.347188 141.479438)">your laptop</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 500; font-size: 10.5px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #001017" x="508.005" y="89.761549" transform="rotate(-0 508.005 89.761549)">GitHub</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 9px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #4a535c" transform="translate(474.740156 122.579437)">An online copy</text>
+    <text style="font-size: 9px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #4a535c" transform="translate(475.069922 135.179438)">of your project</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 500; font-size: 8.8px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #001017" x="138.33" y="95.417937" transform="rotate(-0 138.33 95.417937)">stage</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 500; font-size: 8.8px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #001017" x="286.2" y="95.418281" transform="rotate(-0 286.2 95.418281)">commit</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 500; font-size: 8.8px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #001017" x="434.07" y="95.418281" transform="rotate(-0 434.07 95.418281)">push</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 8.8px; font-family: 'Ubuntu Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #4a535c" x="286.2" y="179.132681" transform="rotate(-0 286.2 179.132681)">Everything left of GitHub happens on your laptop; only push sends your work online</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p7746c963be">
+   <rect x="7.2" y="7.2" width="558" height="188.496"/>
+  </clipPath>
+ </defs>
+</svg>

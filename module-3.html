@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" class="editorial">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 03: How web apps work | Copilot x Sectors</title>
+  <script>
+    (function(){
+      var t = 'light';
+      try { t = localStorage.getItem('copilot-sectors-theme') || 'light'; } catch (e) {}
+      if (t === 'dark') document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average&family=Ubuntu+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Ubuntu+Sans+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/algoritma-mark-midnight.svg" type="image/svg+xml" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Course">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Copilot x Sectors, home">
+      <img class="logo-mark logo--on-light" src="assets/algoritma-mark-midnight.svg" alt="Algoritma" width="24" height="24" />
+      <img class="logo-mark logo--on-dark" src="assets/algoritma-mark-cream.svg" alt="Algoritma" width="24" height="24" />
+      <span class="nav-brand-text">Copilot x Sectors</span>
+    </a>
+    <div class="nav-links-wrap">
+      <button class="nav-scroll-arrow nav-scroll-arrow--left" type="button" onclick="scrollNav(-1)" aria-label="Scroll left" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a><a href="/setup" class="nav-link">Setup</a><a href="/module-1" class="nav-link"><span class="nav-num">01</span>Vibe coding</a><a href="/module-2" class="nav-link"><span class="nav-num">02</span>AI workspace</a><a href="/module-3" class="nav-link active" aria-current="page"><span class="nav-num">03</span>Web apps</a><a href="/module-4" class="nav-link"><span class="nav-num">04</span>Warm-up</a><a href="/module-5" class="nav-link"><span class="nav-num">05</span>Market data</a><a href="/module-6" class="nav-link"><span class="nav-num">06</span>IDX app</a><a href="/module-7" class="nav-link"><span class="nav-num">07</span>Stretch</a><a href="/module-8" class="nav-link"><span class="nav-num">08</span>Git</a><a href="/module-9" class="nav-link"><span class="nav-num">09</span>Ship it</a><a href="/module-10" class="nav-link"><span class="nav-num">10</span>MCP bonus</a><a href="/resources" class="nav-link">Resources</a>
+      </div>
+      <button class="nav-scroll-arrow nav-scroll-arrow--right" type="button" onclick="scrollNav(1)" aria-label="Scroll right" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span></button>
+    </div>
+    <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch between light and dark theme">
+      <svg id="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+<header class="page-header">
+  <div class="container page-header-inner">
+    <div class="page-header-eyebrow"><span class="eyebrow-num">Module 03</span> <span aria-hidden="true">/</span> Web apps</div>
+    <h1>How web apps work</h1>
+    <p class="page-header-desc">Know the parts, so you can ask for them.</p>
+    
+  </div>
+</header>
+<main id="main">
+
+<section class="section" id="s-3-1-why-you-need-to-know-this">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>3.1 Why you need to know this</h2>
+    <p>You do not need to write code, but you do need to know <strong>what you are asking for</strong>. In 2.5, Agent decided the page, the formula, the data and the tools on its own. If you know the parts of a web app, you can decide each one yourself and say it in your prompt. That is the difference between an app that runs and an app that does what you wanted.</p>
+
+  </div>
+</section>
+<section class="section" id="s-3-2-web-apps-and-native-apps">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>3.2 Web apps and native apps</h2>
+    <p>A <strong>web app</strong> runs in a browser and is opened with a link, on any laptop or phone. A <strong>native app</strong> is installed on one operating system, such as an iPhone app from the App Store. Today you build a web app, so anyone with your link can use it.</p>
+
+  </div>
+</section>
+<section class="section" id="s-3-3-the-three-parts-of-a-web-app">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>3.3 The three parts of a web app</h2>
+    <figure class="diagram-wrap"><svg aria-label="Diagram: the three parts of a web app. Frontend (what you see and click, shown in the browser), backend (formulas, rules and secrets in app.py) and data (what you type, or an API such as Sectors). Requests go right, answers come back left. Local: localhost:8501, only your laptop. Live: your-app.streamlit.app, anyone on any device." role="img" version="1.1" viewbox="0 0 572.4 225.072" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<metadata>
+<rdf:rdf xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<cc:work>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+<dc:date>2026-10-28T18:30:46.989255</dc:date>
+<dc:format>image/svg+xml</dc:format>
+<dc:creator>
+<cc:agent>
+<dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+</cc:agent>
+</dc:creator>
+</cc:work>
+</rdf:rdf>
+</metadata>
+<defs>
+<style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+</defs>
+<g id="figure_1">
+<g id="patch_1">
+<path d="M 0 225.072 
+L 572.4 225.072 
+L 572.4 0 
+L 0 0 
+z
+" style="fill: var(--background)"></path>
+</g>
+<g id="axes_1">
+<g id="patch_2">
+<path clip-path="url(#p3a55f444db)" d="M 28.404 148.0176 
+L 164.556 148.0176 
+Q 171.252 148.0176 171.252 141.3648 
+L 171.252 67.0752 
+Q 171.252 60.4224 164.556 60.4224 
+L 28.404 60.4224 
+Q 21.708 60.4224 21.708 67.0752 
+L 21.708 141.3648 
+Q 21.708 148.0176 28.404 148.0176 
+z
+" style="fill: var(--card); stroke: var(--dg-line); stroke-width: 1.6; stroke-linejoin: miter"></path>
+</g>
+<g id="patch_3">
+<path clip-path="url(#p3a55f444db)" d="M 218.124 148.0176 
+L 354.276 148.0176 
+Q 360.972 148.0176 360.972 141.3648 
+L 360.972 67.0752 
+Q 360.972 60.4224 354.276 60.4224 
+L 218.124 60.4224 
+Q 211.428 60.4224 211.428 67.0752 
+L 211.428 141.3648 
+Q 211.428 148.0176 218.124 148.0176 
+z
+" style="fill: var(--card); stroke: var(--dg-line); stroke-width: 1.6; stroke-linejoin: miter"></path>
+</g>
+<g id="patch_4">
+<path clip-path="url(#p3a55f444db)" d="M 407.844 148.0176 
+L 543.996 148.0176 
+Q 550.692 148.0176 550.692 141.3648 
+L 550.692 67.0752 
+Q 550.692 60.4224 543.996 60.4224 
+L 407.844 60.4224 
+Q 401.148 60.4224 401.148 67.0752 
+L 401.148 141.3648 
+Q 401.148 148.0176 407.844 148.0176 
+z
+" style="fill: var(--card); stroke: var(--dg-line); stroke-width: 1.6; stroke-linejoin: miter"></path>
+</g>
+<g id="patch_5">
+<path clip-path="url(#p3a55f444db)" d="M 175.484953 89.2512 
+Q 191.338445 89.2512 205.403083 89.2512 
+" style="fill: none; stroke: var(--dg-line); stroke-width: 1.6; stroke-linecap: round"></path>
+<path clip-path="url(#p3a55f444db)" d="M 199.803083 86.4512 
+L 205.403083 89.2512 
+L 199.803083 92.0512 
+z
+" style="fill: var(--dg-line); stroke: var(--dg-line); stroke-width: 1.6; stroke-linecap: round"></path>
+</g>
+<g id="patch_6">
+<path clip-path="url(#p3a55f444db)" d="M 207.195047 119.1888 
+Q 191.341555 119.1888 177.05331 119.1888 
+" style="fill: none; stroke: var(--muted-foreground); stroke-width: 1.4; stroke-linecap: round"></path>
+<path clip-path="url(#p3a55f444db)" d="M 182.65331 121.9888 
+L 177.05331 119.1888 
+L 182.65331 116.3888 
+z
+" style="fill: var(--muted-foreground); stroke: var(--muted-foreground); stroke-width: 1.4; stroke-linecap: round"></path>
+</g>
+<g id="patch_7">
+<path clip-path="url(#p3a55f444db)" d="M 365.204953 89.2512 
+Q 381.058445 89.2512 395.123083 89.2512 
+" style="fill: none; stroke: var(--dg-line); stroke-width: 1.6; stroke-linecap: round"></path>
+<path clip-path="url(#p3a55f444db)" d="M 389.523083 86.4512 
+L 395.123083 89.2512 
+L 389.523083 92.0512 
+z
+" style="fill: var(--dg-line); stroke: var(--dg-line); stroke-width: 1.6; stroke-linecap: round"></path>
+</g>
+<g id="patch_8">
+<path clip-path="url(#p3a55f444db)" d="M 396.915047 119.1888 
+Q 381.061555 119.1888 366.77331 119.1888 
+" style="fill: none; stroke: var(--muted-foreground); stroke-width: 1.4; stroke-linecap: round"></path>
+<path clip-path="url(#p3a55f444db)" d="M 372.37331 121.9888 
+L 366.77331 119.1888 
+L 372.37331 116.3888 
+z
+" style="fill: var(--muted-foreground); stroke: var(--muted-foreground); stroke-width: 1.4; stroke-linecap: round"></path>
+</g>
+<g id="patch_9">
+<path clip-path="url(#p3a55f444db)" d="M 27.846 216.2088 
+L 271.134 216.2088 
+Q 276.714 216.2088 276.714 210.6648 
+L 276.714 189.5976 
+Q 276.714 184.0536 271.134 184.0536 
+L 27.846 184.0536 
+Q 22.266 184.0536 22.266 189.5976 
+L 22.266 210.6648 
+Q 22.266 216.2088 27.846 216.2088 
+z
+" style="fill: var(--card); stroke: var(--border); stroke-linejoin: miter"></path>
+</g>
+<g id="patch_10">
+<path clip-path="url(#p3a55f444db)" d="M 301.266 216.2088 
+L 544.554 216.2088 
+Q 550.134 216.2088 550.134 210.6648 
+L 550.134 189.5976 
+Q 550.134 184.0536 544.554 184.0536 
+L 301.266 184.0536 
+Q 295.686 184.0536 295.686 189.5976 
+L 295.686 210.6648 
+Q 295.686 216.2088 301.266 216.2088 
+z
+" style="fill: var(--card); stroke: var(--border); stroke-linejoin: miter"></path>
+</g>
+<g id="text_1">
+<text style="font-size: 13px; font-family: var(--editorial); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 286.2 21.06)" x="286.2" y="21.06">The three parts of a web app</text>
+</g>
+<g id="text_2">
+<text style="font-weight: 500; font-size: 10.5px; font-family: var(--sans); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 96.48 84.217549)" x="96.48" y="84.217549">Frontend</text>
+</g>
+<g id="text_3">
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(42.748594 110.735438)">What you see and click:</text>
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(38.410313 123.335438)">title, inputs, results, chart</text>
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(44.705391 136.277859)">(shown in the browser)</text>
+</g>
+<g id="text_4">
+<text style="font-weight: 500; font-size: 10.5px; font-family: var(--sans); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 286.2 84.217549)" x="286.2" y="84.217549">Backend</text>
+</g>
+<g id="text_5">
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(237.235078 110.735438)">The logic out of sight:</text>
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(233.502891 123.748172)">formulas, rules, secrets</text>
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(233.157656 135.935438)">(your Python in app.py)</text>
+</g>
+<g id="text_6">
+<text style="font-weight: 500; font-size: 10.5px; font-family: var(--sans); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 475.92 84.217139)" x="475.92" y="84.217139">Data</text>
+</g>
+<g id="text_7">
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(403.950234 111.607313)">Where the numbers come from:</text>
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(420.631172 123.335438)">what you type, or an API</text>
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(415.025156 136.277859)">such as Sectors (Module 5)</text>
+</g>
+<g id="text_8">
+<text style="font-size: 8.8px; font-family: var(--sans); text-anchor: middle; fill: var(--muted-foreground)" transform="rotate(-0 286.2 168.044681)" x="286.2" y="168.044681">a request goes right  ➜     ⬅  the answer comes back left</text>
+</g>
+<g id="text_9">
+<text style="font-size: 8.8px; font-family: var(--sans); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 149.49 202.417481)" x="149.49" y="202.417481">Local: http://localhost:8501  (only your laptop)</text>
+</g>
+<g id="text_10">
+<text style="font-size: 8.8px; font-family: var(--sans); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 422.91 202.417481)" x="422.91" y="202.417481">Live: https://your-app.streamlit.app  (anyone, any device)</text>
+</g>
+</g>
+</g>
+<defs>
+<clippath id="p3a55f444db">
+<rect height="210.672" width="558" x="7.2" y="7.2"></rect>
+</clippath>
+</defs>
+</svg>
+</figure>
+<div aria-label="Table: Part, In plain words, In today’s app" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th>Part</th>
+<th>In plain words</th>
+<th>In today’s app</th>
+<th>What to tell Copilot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Frontend</strong></td>
+<td>What you see and click</td>
+<td>Title, input boxes, result, chart</td>
+<td>What is on the page, in what order, how it looks</td>
+</tr>
+<tr>
+<td><strong>Backend</strong></td>
+<td>The work done out of sight</td>
+<td>Python in <code>app.py</code>: formulas, rules, your secret key</td>
+<td>How each result is calculated, what to do with bad input</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>Where the numbers come from</td>
+<td>What you type, then the Sectors API (Module 5)</td>
+<td>Which source to use, and which fields</td>
+</tr>
+</tbody>
+</table></div>
+<p>Most web apps keep the frontend and backend in separate programs. <strong>Streamlit</strong> is a <strong>framework</strong>, a ready-made starter kit of code, that lets one Python file do both: each line of Python becomes a piece of the page. That is why one file, <code>app.py</code>, is enough today.</p>
+
+  </div>
+</section>
+<section class="section" id="s-3-4-local-or-live">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>3.4 Local or live?</h2>
+    <p>On your laptop the app is <strong>local</strong>: Streamlit runs it on your own computer, at the address <code>localhost:8501</code>, and only you can open it. When you <strong>deploy</strong> it in Module 9, it runs on a <strong>server</strong>, a computer in a data centre that stays on all day, and it is <strong>live</strong>: anyone can open its link.</p>
+
+  </div>
+</section>
+<section class="section" id="s-3-5-mini-glossary">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>3.5 Mini glossary</h2>
+    <div aria-label="Table: Term, In one plain sentence" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th>Term</th>
+<th>In one plain sentence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IDE</strong></td>
+<td>A code editor with extra tools; VS Code is one</td>
+</tr>
+<tr>
+<td><strong>AI agent</strong></td>
+<td>An AI that plans and takes several steps on its own</td>
+</tr>
+<tr>
+<td><strong>Frontend / backend</strong></td>
+<td>What you see and click / the work done out of sight</td>
+</tr>
+<tr>
+<td><strong>API</strong></td>
+<td>A set way for one program to ask another for data (Module 5)</td>
+</tr>
+<tr>
+<td><strong>Server</strong></td>
+<td>A computer in a data centre that runs your app all day</td>
+</tr>
+<tr>
+<td><strong>Deploy</strong></td>
+<td>Putting your app on a server so it is live</td>
+</tr>
+<tr>
+<td><strong>Framework</strong></td>
+<td>A starter kit of code; today, Streamlit</td>
+</tr>
+<tr>
+<td><strong>Bug</strong></td>
+<td>The app doing something wrong</td>
+</tr>
+</tbody>
+</table></div>
+
+  </div>
+</section>
+<div class="container"><nav class="page-nav" aria-label="Previous and next page"><a href="/module-2" class="page-nav-link"><span class="page-nav-label"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Previous</span><span class="page-nav-title">Module 02: Your AI workspace</span></a><a href="/module-4" class="page-nav-link page-nav-link--next"><span class="page-nav-label">Next <svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="page-nav-title">Module 04: Warm-up: Investment Goal Calculator</span></a></nav></div>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="https://algorit.ma" class="footer-logo" target="_blank" rel="noopener" aria-label="Algoritma">
+      <img class="logo-wordmark logo--on-light" src="assets/algoritma-wordmark-midnight.svg" alt="Algoritma" width="118" height="28" />
+      <img class="logo-wordmark logo--on-dark" src="assets/algoritma-wordmark-cream.svg" alt="Algoritma" width="118" height="28" />
+    </a>
+    <p class="footer-text">Build and ship a live IDX stock app with an AI pair programmer. GitHub Copilot x Sectors Community Meetup, 31 October 2026, Block71 Jakarta.</p>
+    <p class="footer-text footer-text--fine">This session is about building software. Nothing in it, including any number your app shows, is investment advice.</p>
+  </div>
+</footer>
+<script>
+  function currentTheme(){
+    return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  }
+
+  function toggleTheme(){
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.classList.toggle('dark', next === 'dark');
+    try { localStorage.setItem('copilot-sectors-theme', next); } catch (e) {}
+    syncThemeIcon(next);
+  }
+
+  function syncThemeIcon(theme){
+    var sun = document.getElementById('theme-icon-sun');
+    var moon = document.getElementById('theme-icon-moon');
+    // Show the theme you would switch to
+    if (sun) sun.style.display = theme === 'dark' ? 'block' : 'none';
+    if (moon) moon.style.display = theme === 'light' ? 'block' : 'none';
+  }
+
+  function checkNavScroll(){
+    var el = document.getElementById('navLinks');
+    var wrap = document.querySelector('.nav-links-wrap');
+    var left = document.querySelector('.nav-scroll-arrow--left');
+    var right = document.querySelector('.nav-scroll-arrow--right');
+    if (!el || !wrap || !left || !right) return;
+    var maxScroll = el.scrollWidth - el.clientWidth;
+    var showLeft = el.scrollLeft > 4;
+    var showRight = maxScroll > 4 && el.scrollLeft < maxScroll - 4;
+    left.classList.toggle('visible', showLeft);
+    right.classList.toggle('visible', showRight);
+    wrap.classList.toggle('show-left', showLeft);
+    wrap.classList.toggle('show-right', showRight);
+  }
+
+  function scrollNav(dir){
+    var el = document.getElementById('navLinks');
+    if (el) el.scrollBy({ left: dir * 140, behavior: 'smooth' });
+  }
+
+  function copyText(text){
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function(resolve, reject){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
+      document.body.removeChild(ta);
+    });
+  }
+
+  function copyCodeBlock(btn){
+    var block = btn.closest('.code-block');
+    var pre = block ? block.querySelector('pre') : null;
+    if (!pre) return;
+    var tip = btn.querySelector('.code-copy-tip');
+    var original = btn.querySelector('svg').outerHTML;
+    copyText(pre.textContent).then(function(){
+      btn.classList.add('copied');
+      btn.querySelector('svg').outerHTML = '<svg class="icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+      if (tip) tip.textContent = 'Copied';
+      setTimeout(function(){
+        btn.classList.remove('copied');
+        btn.querySelector('svg').outerHTML = original;
+        if (tip) tip.textContent = '';
+      }, 1500);
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', function(){
+    syncThemeIcon(currentTheme());
+    var navLinks = document.getElementById('navLinks');
+    var active = navLinks ? navLinks.querySelector('.nav-link.active') : null;
+    if (active && navLinks) {
+      navLinks.scrollLeft = active.offsetLeft - navLinks.clientWidth / 2 + active.offsetWidth / 2;
+    }
+    checkNavScroll();
+    if (navLinks) navLinks.addEventListener('scroll', checkNavScroll);
+    window.addEventListener('resize', checkNavScroll);
+  });
+
+</script>
+</body>
+</html>

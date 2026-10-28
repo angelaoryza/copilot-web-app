@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" class="editorial">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 09: Ship it | Copilot x Sectors</title>
+  <script>
+    (function(){
+      var t = 'light';
+      try { t = localStorage.getItem('copilot-sectors-theme') || 'light'; } catch (e) {}
+      if (t === 'dark') document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average&family=Ubuntu+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Ubuntu+Sans+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/algoritma-mark-midnight.svg" type="image/svg+xml" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Course">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Copilot x Sectors, home">
+      <img class="logo-mark logo--on-light" src="assets/algoritma-mark-midnight.svg" alt="Algoritma" width="24" height="24" />
+      <img class="logo-mark logo--on-dark" src="assets/algoritma-mark-cream.svg" alt="Algoritma" width="24" height="24" />
+      <span class="nav-brand-text">Copilot x Sectors</span>
+    </a>
+    <div class="nav-links-wrap">
+      <button class="nav-scroll-arrow nav-scroll-arrow--left" type="button" onclick="scrollNav(-1)" aria-label="Scroll left" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a><a href="/setup" class="nav-link">Setup</a><a href="/module-1" class="nav-link"><span class="nav-num">01</span>Vibe coding</a><a href="/module-2" class="nav-link"><span class="nav-num">02</span>AI workspace</a><a href="/module-3" class="nav-link"><span class="nav-num">03</span>Web apps</a><a href="/module-4" class="nav-link"><span class="nav-num">04</span>Warm-up</a><a href="/module-5" class="nav-link"><span class="nav-num">05</span>Market data</a><a href="/module-6" class="nav-link"><span class="nav-num">06</span>IDX app</a><a href="/module-7" class="nav-link"><span class="nav-num">07</span>Stretch</a><a href="/module-8" class="nav-link"><span class="nav-num">08</span>Git</a><a href="/module-9" class="nav-link active" aria-current="page"><span class="nav-num">09</span>Ship it</a><a href="/module-10" class="nav-link"><span class="nav-num">10</span>MCP bonus</a><a href="/resources" class="nav-link">Resources</a>
+      </div>
+      <button class="nav-scroll-arrow nav-scroll-arrow--right" type="button" onclick="scrollNav(1)" aria-label="Scroll right" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span></button>
+    </div>
+    <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch between light and dark theme">
+      <svg id="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+<header class="page-header">
+  <div class="container page-header-inner">
+    <div class="page-header-eyebrow"><span class="eyebrow-num">Module 09</span> <span aria-hidden="true">/</span> Ship it</div>
+    <h1>Ship it</h1>
+    <p class="page-header-desc">Your app, live on the internet.</p>
+    
+  </div>
+</header>
+<main id="main">
+
+<section class="section" id="s-9-1-what-deploying-means">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>9.1 What deploying means</h2>
+    <p><strong>Deploying</strong> means copying your app to a server so it runs for everyone at a public address. A <strong>host</strong> is the service that does this, in three steps:</p>
+<div aria-label="Table: A host…, On Streamlit Community Cloud" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th>A host…</th>
+<th>On Streamlit Community Cloud</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stores</strong> your files</td>
+<td>Takes a copy of your GitHub repository (Module 8)</td>
+</tr>
+<tr>
+<td><strong>Builds</strong> your app</td>
+<td>Installs the packages listed in <code>requirements.txt</code></td>
+</tr>
+<tr>
+<td><strong>Serves</strong> your app</td>
+<td>Runs <code>app.py</code> and answers visitors at <code>your-app.streamlit.app</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Your app builds each page from live data and what visitors type, so it needs a host that runs Python, such as Streamlit Community Cloud.</p>
+
+  </div>
+</section>
+<section class="section" id="s-9-2-deploy-on-streamlit-community-cloud">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>9.2 Deploy on Streamlit Community Cloud</h2>
+    <p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span></p>
+<div class="install-steps"><div class="install-step"><div class="install-step-line"><div class="install-step-dot">1</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>Go to <code>share.streamlit.io</code> and sign in with GitHub.</p></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">2</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>Click <strong>Create app</strong>, then <strong>Yup, I have an app</strong>.</p></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">3</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>Choose your <strong>Repository</strong>, the <strong>Branch</strong> <code>main</code>, and the <strong>file path</strong> <code>app.py</code>.</p></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">4</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>Optional: choose an <strong>App URL</strong>, for example <code>idx-snapshot-yourname</code>.</p></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">5</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>Click <strong>Advanced settings</strong>. In <strong>Secrets</strong>, paste this one line with your real key between the quotes: <code>SECTORS_API_KEY = "your-key-here"</code>. Leave the Python version as it is.</p></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">6</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>Click <strong>Save</strong>, then <strong>Deploy</strong>. The build log appears on the right; the first build takes two or three minutes.</p></div></div></div></div>
+<div class="info-box info-box--success"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9.5"></polyline></svg></span><div class="info-box-body"><span class="info-box-label">What to look for</span> <p>your app opens in the browser; <code>BBCA</code> shows the company, chart and calculator, as on your laptop. If the log ends in red lines, call a mentor.</p></div></div>
+
+  </div>
+</section>
+<section class="section" id="s-9-3-why-env-does-not-travel">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>9.3 Why .env does not travel</h2>
+    <p>The host copies your files from GitHub, and <code>.gitignore</code> kept <code>.env</code> off GitHub. So the live app gets the key from <strong>Secrets</strong>, a private settings box on the host. <code>sectors.py</code> looks for <code>SECTORS_API_KEY</code> in <code>.env</code> first and in Secrets second, so the same code works in both places.</p>
+<div aria-label="Table: , On your laptop, When deployed" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th></th>
+<th>On your laptop</th>
+<th>When deployed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Where the key lives</strong></td>
+<td><code>.env</code></td>
+<td><strong>Secrets</strong> in the app’s settings</td>
+</tr>
+<tr>
+<td><strong>Format</strong></td>
+<td><code>SECTORS_API_KEY=your-key-here</code></td>
+<td><code>SECTORS_API_KEY = "your-key-here"</code> (quotes needed)</td>
+</tr>
+<tr>
+<td><strong>To change it</strong></td>
+<td>Edit <code>.env</code>, restart the app</td>
+<td><strong>⋮ → Settings → Secrets</strong>, then save <span class="verify">[VERIFY]</span></td>
+</tr>
+</tbody>
+</table></div>
+
+  </div>
+</section>
+<section class="section" id="s-9-4-open-it-on-your-phone">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>9.4 Open it on your phone</h2>
+    <p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> send your app’s link to yourself, open it on your phone, and try a ticker. Then send it to the person next to you.</p>
+<p>Every push now updates the live app by itself. The flow for any change is: <strong>change → test locally → commit → Sync Changes → wait a minute → refresh the live page.</strong></p>
+
+  </div>
+</section>
+<div class="container"><nav class="page-nav" aria-label="Previous and next page"><a href="/module-8" class="page-nav-link"><span class="page-nav-label"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Previous</span><span class="page-nav-title">Module 08: Save your work with Git</span></a><a href="/module-10" class="page-nav-link page-nav-link--next"><span class="page-nav-label">Next <svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="page-nav-title">Module 10: Bonus: live data with MCP</span></a></nav></div>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="https://algorit.ma" class="footer-logo" target="_blank" rel="noopener" aria-label="Algoritma">
+      <img class="logo-wordmark logo--on-light" src="assets/algoritma-wordmark-midnight.svg" alt="Algoritma" width="118" height="28" />
+      <img class="logo-wordmark logo--on-dark" src="assets/algoritma-wordmark-cream.svg" alt="Algoritma" width="118" height="28" />
+    </a>
+    <p class="footer-text">Build and ship a live IDX stock app with an AI pair programmer. GitHub Copilot x Sectors Community Meetup, 31 October 2026, Block71 Jakarta.</p>
+    <p class="footer-text footer-text--fine">This session is about building software. Nothing in it, including any number your app shows, is investment advice.</p>
+  </div>
+</footer>
+<script>
+  function currentTheme(){
+    return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  }
+
+  function toggleTheme(){
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.classList.toggle('dark', next === 'dark');
+    try { localStorage.setItem('copilot-sectors-theme', next); } catch (e) {}
+    syncThemeIcon(next);
+  }
+
+  function syncThemeIcon(theme){
+    var sun = document.getElementById('theme-icon-sun');
+    var moon = document.getElementById('theme-icon-moon');
+    // Show the theme you would switch to
+    if (sun) sun.style.display = theme === 'dark' ? 'block' : 'none';
+    if (moon) moon.style.display = theme === 'light' ? 'block' : 'none';
+  }
+
+  function checkNavScroll(){
+    var el = document.getElementById('navLinks');
+    var wrap = document.querySelector('.nav-links-wrap');
+    var left = document.querySelector('.nav-scroll-arrow--left');
+    var right = document.querySelector('.nav-scroll-arrow--right');
+    if (!el || !wrap || !left || !right) return;
+    var maxScroll = el.scrollWidth - el.clientWidth;
+    var showLeft = el.scrollLeft > 4;
+    var showRight = maxScroll > 4 && el.scrollLeft < maxScroll - 4;
+    left.classList.toggle('visible', showLeft);
+    right.classList.toggle('visible', showRight);
+    wrap.classList.toggle('show-left', showLeft);
+    wrap.classList.toggle('show-right', showRight);
+  }
+
+  function scrollNav(dir){
+    var el = document.getElementById('navLinks');
+    if (el) el.scrollBy({ left: dir * 140, behavior: 'smooth' });
+  }
+
+  function copyText(text){
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function(resolve, reject){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
+      document.body.removeChild(ta);
+    });
+  }
+
+  function copyCodeBlock(btn){
+    var block = btn.closest('.code-block');
+    var pre = block ? block.querySelector('pre') : null;
+    if (!pre) return;
+    var tip = btn.querySelector('.code-copy-tip');
+    var original = btn.querySelector('svg').outerHTML;
+    copyText(pre.textContent).then(function(){
+      btn.classList.add('copied');
+      btn.querySelector('svg').outerHTML = '<svg class="icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+      if (tip) tip.textContent = 'Copied';
+      setTimeout(function(){
+        btn.classList.remove('copied');
+        btn.querySelector('svg').outerHTML = original;
+        if (tip) tip.textContent = '';
+      }, 1500);
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', function(){
+    syncThemeIcon(currentTheme());
+    var navLinks = document.getElementById('navLinks');
+    var active = navLinks ? navLinks.querySelector('.nav-link.active') : null;
+    if (active && navLinks) {
+      navLinks.scrollLeft = active.offsetLeft - navLinks.clientWidth / 2 + active.offsetWidth / 2;
+    }
+    checkNavScroll();
+    if (navLinks) navLinks.addEventListener('scroll', checkNavScroll);
+    window.addEventListener('resize', checkNavScroll);
+  });
+
+</script>
+</body>
+</html>

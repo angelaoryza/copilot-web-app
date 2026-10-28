@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" class="editorial">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Set up before you arrive | Copilot x Sectors</title>
+  <script>
+    (function(){
+      var t = 'light';
+      try { t = localStorage.getItem('copilot-sectors-theme') || 'light'; } catch (e) {}
+      if (t === 'dark') document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average&family=Ubuntu+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Ubuntu+Sans+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/algoritma-mark-midnight.svg" type="image/svg+xml" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Course">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Copilot x Sectors, home">
+      <img class="logo-mark logo--on-light" src="assets/algoritma-mark-midnight.svg" alt="Algoritma" width="24" height="24" />
+      <img class="logo-mark logo--on-dark" src="assets/algoritma-mark-cream.svg" alt="Algoritma" width="24" height="24" />
+      <span class="nav-brand-text">Copilot x Sectors</span>
+    </a>
+    <div class="nav-links-wrap">
+      <button class="nav-scroll-arrow nav-scroll-arrow--left" type="button" onclick="scrollNav(-1)" aria-label="Scroll left" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a><a href="/setup" class="nav-link active" aria-current="page">Setup</a><a href="/module-1" class="nav-link"><span class="nav-num">01</span>Vibe coding</a><a href="/module-2" class="nav-link"><span class="nav-num">02</span>AI workspace</a><a href="/module-3" class="nav-link"><span class="nav-num">03</span>Web apps</a><a href="/module-4" class="nav-link"><span class="nav-num">04</span>Warm-up</a><a href="/module-5" class="nav-link"><span class="nav-num">05</span>Market data</a><a href="/module-6" class="nav-link"><span class="nav-num">06</span>IDX app</a><a href="/module-7" class="nav-link"><span class="nav-num">07</span>Stretch</a><a href="/module-8" class="nav-link"><span class="nav-num">08</span>Git</a><a href="/module-9" class="nav-link"><span class="nav-num">09</span>Ship it</a><a href="/module-10" class="nav-link"><span class="nav-num">10</span>MCP bonus</a><a href="/resources" class="nav-link">Resources</a>
+      </div>
+      <button class="nav-scroll-arrow nav-scroll-arrow--right" type="button" onclick="scrollNav(1)" aria-label="Scroll right" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span></button>
+    </div>
+    <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch between light and dark theme">
+      <svg id="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+<header class="page-header">
+  <div class="container page-header-inner">
+    <div class="page-header-eyebrow">Before you arrive</div>
+    <h1>Set up before you arrive</h1>
+    <p class="page-header-desc">Do this a day or two before the meetup, so the three hours go to building.</p>
+    
+  </div>
+</header>
+<main id="main">
+<section class="section" id="s-p-1-install-vs-code">
+  <div class="container">
+    <div class="section-label">Step 1</div>
+    <h2>P.1 Install VS Code</h2>
+    <p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> download VS Code from <code>code.visualstudio.com</code>.</p>
+<ul class="content-list">
+<li><strong>Windows:</strong> run the installer with the default options.</li>
+<li><strong>Mac:</strong> drag <strong>Visual Studio Code</strong> into <strong>Applications</strong>.</li>
+</ul>
+
+  </div>
+</section>
+<section class="section" id="s-p-2-install-python">
+  <div class="container">
+    <div class="section-label">Step 2</div>
+    <h2>P.2 Install Python</h2>
+    <p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> download <strong>Python 3.10 or newer</strong> from <code>python.org/downloads</code>.</p>
+<ul class="content-list">
+<li><strong>Windows:</strong> on the first screen, tick <strong>Add python.exe to PATH</strong>, then <strong>Install Now</strong>.</li>
+<li><strong>Mac:</strong> open the <code>.pkg</code> file and follow the steps.</li>
+</ul>
+<p><strong>Check it:</strong> in a terminal, <code>python --version</code> (Windows) or <code>python3 --version</code> (Mac) shows <code>Python 3.</code>…</p>
+
+  </div>
+</section>
+<section class="section" id="s-p-3-install-git">
+  <div class="container">
+    <div class="section-label">Step 3</div>
+    <h2>P.3 Install Git</h2>
+    <ul class="content-list">
+<li><strong>Windows:</strong> download it from <code>git-scm.com/downloads</code> and keep the defaults.</li>
+<li><strong>Mac:</strong> type <code>git --version</code> in Terminal. If Git is missing, click <strong>Install</strong> when your Mac offers the developer tools.</li>
+</ul>
+<p><strong>Check it:</strong> <code>git --version</code> shows a version number.</p>
+
+  </div>
+</section>
+<section class="section" id="s-p-4-create-your-accounts">
+  <div class="container">
+    <div class="section-label">Step 4</div>
+    <h2>P.4 Create your accounts</h2>
+    <div aria-label="Table: Account, Where, For" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th>Account</th>
+<th>Where</th>
+<th>For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GitHub</strong></td>
+<td><code>github.com/signup</code></td>
+<td>Copilot, and storing your code</td>
+</tr>
+<tr>
+<td><strong>Copilot</strong></td>
+<td><code>github.com/settings/copilot</code></td>
+<td>Turn on <strong>Copilot Free</strong></td>
+</tr>
+<tr>
+<td><strong>Sectors</strong></td>
+<td><code>sectors.app</code></td>
+<td>Live IDX data and your API key <span class="verify">[VERIFY: how keys are given out on the day]</span></td>
+</tr>
+<tr>
+<td><strong>Streamlit Community Cloud</strong></td>
+<td><code>share.streamlit.io</code></td>
+<td>Putting your app online; sign in with GitHub</td>
+</tr>
+</tbody>
+</table></div>
+<p>Use the same GitHub account everywhere.</p>
+
+  </div>
+</section>
+<section class="section" id="s-p-5-install-github-copilot-and-python-in-vs-code">
+  <div class="container">
+    <div class="section-label">Step 5</div>
+    <h2>P.5 Install GitHub Copilot and Python in VS Code</h2>
+    <p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span></p>
+<div class="install-steps"><div class="install-step"><div class="install-step-line"><div class="install-step-dot">1</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>Open <strong>Extensions</strong> in the left bar (<code>Ctrl+Shift+X</code>, Mac <code>Cmd+Shift+X</code>).</p></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">2</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>Install <strong>GitHub Copilot</strong>.</p></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">3</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>Install <strong>Python</strong> by <strong>Microsoft</strong>.</p></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">4</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>Click the <strong>Accounts</strong> icon at the bottom left and sign in with GitHub.</p></div></div></div></div>
+<p><strong>Check it:</strong> open Copilot Chat (chat icon, title bar) and send <strong>Hello</strong>. No answer? In <strong>Extensions</strong>, click <strong>GitHub Copilot → Enable</strong>.</p>
+
+  </div>
+</section>
+<section class="section" id="s-p-6-get-the-starter-files">
+  <div class="container">
+    <div class="section-label">Step 6</div>
+    <h2>P.6 Get the starter files</h2>
+    <div class="starter-buttons">
+  <a href="https://github.com/YOUR-ACCOUNT/idx-stock-snapshot-starter" target="_blank" rel="noopener" class="btn btn-primary"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="8" r="2.5"/><line x1="6" y1="8.5" x2="6" y2="15.5"/><path d="M18 10.5c0 4-6 3-11 5.5"/></svg>Starter kit on GitHub</a>
+  <a href="https://drive.google.com/YOUR-LINK" target="_blank" rel="noopener" class="btn btn-outline"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download from Google Drive</a>
+</div>
+<ul class="content-list">
+<li><strong>New to GitHub:</strong> download the ZIP from Google Drive, unzip it (Windows: right-click → <strong>Extract All</strong>), then <strong>File → Open Folder</strong> in VS Code.</li>
+<li><strong>Familiar with GitHub:</strong> click <strong>Use this template → Create a new repository</strong>, then clone your copy with <strong>Git: Clone</strong> from the Command Palette (<code>Ctrl+Shift+P</code>). In Module 8, skip 8.3 and the publish step in 8.5.</li>
+</ul>
+
+  </div>
+</section>
+<section class="section" id="s-p-7-create-a-virtual-environment">
+  <div class="container">
+    <div class="section-label">Step 7</div>
+    <h2>P.7 Create a virtual environment</h2>
+    <p>A <strong>virtual environment</strong> is a private box of packages for one project, kept in a <code>.venv</code> folder.</p>
+<p class="do-it-line"><strong>Easy way (Windows and Mac).</strong><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> press <code>Ctrl+Shift+P</code> (<code>Cmd+Shift+P</code>), run <strong>Python: Create Environment</strong>, choose <strong>Venv</strong>, pick your Python, tick <code>requirements.txt</code>, click <strong>OK</strong>.</p>
+<p><strong>Terminal way.</strong> If that fails, open <strong>Terminal → New Terminal</strong> and run:</p>
+<div class="code-pair"><div class="code-block"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Windows (PowerShell)</div><pre># Create the box
+python -m venv .venv
+# Turn it on
+.venv\Scripts\activate
+# Install the packages
+pip install -r requirements.txt</pre></div><div class="code-block"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Mac (Terminal)</div><pre># Create the box
+python3 -m venv .venv
+# Turn it on
+source .venv/bin/activate
+# Install the packages
+pip install -r requirements.txt</pre></div></div>
+<div class="info-box info-box--info"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><path d="M9 18h6"></path><path d="M10 21h4"></path><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"></path></svg></span><div class="info-box-body"><span class="info-box-label">Windows tip</span> If “running scripts is disabled”, run <code>Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned</code>, answer <code>Y</code>, and try again.</div></div>
+
+  </div>
+</section>
+<section class="section" id="s-p-8-check-that-it-works">
+  <div class="container">
+    <div class="section-label">Step 8</div>
+    <h2>P.8 Check that it works</h2>
+    <p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> open a new terminal and run:</p>
+<div class="code-block"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Terminal</div><pre>streamlit run app.py</pre></div>
+<p>A page titled <strong>IDX Stock Snapshot</strong> opens in your browser. Press <code>Ctrl+C</code> to stop it. If <code>streamlit</code> is not found, open a new terminal and try again.</p>
+
+  </div>
+</section>
+<div class="container"><nav class="page-nav" aria-label="Previous and next page"><a href="/" class="page-nav-link"><span class="page-nav-label"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Previous</span><span class="page-nav-title">Home</span></a><a href="/module-1" class="page-nav-link page-nav-link--next"><span class="page-nav-label">Next <svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="page-nav-title">Module 01: What is vibe coding (and who cares?)</span></a></nav></div>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="https://algorit.ma" class="footer-logo" target="_blank" rel="noopener" aria-label="Algoritma">
+      <img class="logo-wordmark logo--on-light" src="assets/algoritma-wordmark-midnight.svg" alt="Algoritma" width="118" height="28" />
+      <img class="logo-wordmark logo--on-dark" src="assets/algoritma-wordmark-cream.svg" alt="Algoritma" width="118" height="28" />
+    </a>
+    <p class="footer-text">Build and ship a live IDX stock app with an AI pair programmer. GitHub Copilot x Sectors Community Meetup, 31 October 2026, Block71 Jakarta.</p>
+    <p class="footer-text footer-text--fine">This session is about building software. Nothing in it, including any number your app shows, is investment advice.</p>
+  </div>
+</footer>
+<script>
+  function currentTheme(){
+    return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  }
+
+  function toggleTheme(){
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.classList.toggle('dark', next === 'dark');
+    try { localStorage.setItem('copilot-sectors-theme', next); } catch (e) {}
+    syncThemeIcon(next);
+  }
+
+  function syncThemeIcon(theme){
+    var sun = document.getElementById('theme-icon-sun');
+    var moon = document.getElementById('theme-icon-moon');
+    // Show the theme you would switch to
+    if (sun) sun.style.display = theme === 'dark' ? 'block' : 'none';
+    if (moon) moon.style.display = theme === 'light' ? 'block' : 'none';
+  }
+
+  function checkNavScroll(){
+    var el = document.getElementById('navLinks');
+    var wrap = document.querySelector('.nav-links-wrap');
+    var left = document.querySelector('.nav-scroll-arrow--left');
+    var right = document.querySelector('.nav-scroll-arrow--right');
+    if (!el || !wrap || !left || !right) return;
+    var maxScroll = el.scrollWidth - el.clientWidth;
+    var showLeft = el.scrollLeft > 4;
+    var showRight = maxScroll > 4 && el.scrollLeft < maxScroll - 4;
+    left.classList.toggle('visible', showLeft);
+    right.classList.toggle('visible', showRight);
+    wrap.classList.toggle('show-left', showLeft);
+    wrap.classList.toggle('show-right', showRight);
+  }
+
+  function scrollNav(dir){
+    var el = document.getElementById('navLinks');
+    if (el) el.scrollBy({ left: dir * 140, behavior: 'smooth' });
+  }
+
+  function copyText(text){
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function(resolve, reject){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
+      document.body.removeChild(ta);
+    });
+  }
+
+  function copyCodeBlock(btn){
+    var block = btn.closest('.code-block');
+    var pre = block ? block.querySelector('pre') : null;
+    if (!pre) return;
+    var tip = btn.querySelector('.code-copy-tip');
+    var original = btn.querySelector('svg').outerHTML;
+    copyText(pre.textContent).then(function(){
+      btn.classList.add('copied');
+      btn.querySelector('svg').outerHTML = '<svg class="icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+      if (tip) tip.textContent = 'Copied';
+      setTimeout(function(){
+        btn.classList.remove('copied');
+        btn.querySelector('svg').outerHTML = original;
+        if (tip) tip.textContent = '';
+      }, 1500);
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', function(){
+    syncThemeIcon(currentTheme());
+    var navLinks = document.getElementById('navLinks');
+    var active = navLinks ? navLinks.querySelector('.nav-link.active') : null;
+    if (active && navLinks) {
+      navLinks.scrollLeft = active.offsetLeft - navLinks.clientWidth / 2 + active.offsetWidth / 2;
+    }
+    checkNavScroll();
+    if (navLinks) navLinks.addEventListener('scroll', checkNavScroll);
+    window.addEventListener('resize', checkNavScroll);
+  });
+
+</script>
+</body>
+</html>

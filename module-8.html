@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" class="editorial">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 08: Save your work with Git | Copilot x Sectors</title>
+  <script>
+    (function(){
+      var t = 'light';
+      try { t = localStorage.getItem('copilot-sectors-theme') || 'light'; } catch (e) {}
+      if (t === 'dark') document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average&family=Ubuntu+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Ubuntu+Sans+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/algoritma-mark-midnight.svg" type="image/svg+xml" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Course">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Copilot x Sectors, home">
+      <img class="logo-mark logo--on-light" src="assets/algoritma-mark-midnight.svg" alt="Algoritma" width="24" height="24" />
+      <img class="logo-mark logo--on-dark" src="assets/algoritma-mark-cream.svg" alt="Algoritma" width="24" height="24" />
+      <span class="nav-brand-text">Copilot x Sectors</span>
+    </a>
+    <div class="nav-links-wrap">
+      <button class="nav-scroll-arrow nav-scroll-arrow--left" type="button" onclick="scrollNav(-1)" aria-label="Scroll left" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a><a href="/setup" class="nav-link">Setup</a><a href="/module-1" class="nav-link"><span class="nav-num">01</span>Vibe coding</a><a href="/module-2" class="nav-link"><span class="nav-num">02</span>AI workspace</a><a href="/module-3" class="nav-link"><span class="nav-num">03</span>Web apps</a><a href="/module-4" class="nav-link"><span class="nav-num">04</span>Warm-up</a><a href="/module-5" class="nav-link"><span class="nav-num">05</span>Market data</a><a href="/module-6" class="nav-link"><span class="nav-num">06</span>IDX app</a><a href="/module-7" class="nav-link"><span class="nav-num">07</span>Stretch</a><a href="/module-8" class="nav-link active" aria-current="page"><span class="nav-num">08</span>Git</a><a href="/module-9" class="nav-link"><span class="nav-num">09</span>Ship it</a><a href="/module-10" class="nav-link"><span class="nav-num">10</span>MCP bonus</a><a href="/resources" class="nav-link">Resources</a>
+      </div>
+      <button class="nav-scroll-arrow nav-scroll-arrow--right" type="button" onclick="scrollNav(1)" aria-label="Scroll right" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span></button>
+    </div>
+    <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch between light and dark theme">
+      <svg id="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+<header class="page-header">
+  <div class="container page-header-inner">
+    <div class="page-header-eyebrow"><span class="eyebrow-num">Module 08</span> <span aria-hidden="true">/</span> Git</div>
+    <h1>Save your work with Git</h1>
+    <p class="page-header-desc">From your folder to GitHub, with buttons only.</p>
+    
+  </div>
+</header>
+<main id="main">
+<section class="section section--lead"><div class="container"><p>For this module, close Copilot Chat. Everything here is done with buttons in VS Code, so you understand each step yourself.</p>
+</div></section>
+<section class="section" id="s-8-1-git-in-plain-words">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>8.1 Git in plain words</h2>
+    <p>In a video game you save before the boss fight, and reload if you lose. <strong>Git</strong> does that for your project. It is a free tool on your laptop that keeps a history of your files.</p>
+<div aria-label="Table: Word, Meaning" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th>Word</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Repository (repo)</strong></td>
+<td>Your project folder, plus its full history of save points</td>
+</tr>
+<tr>
+<td><strong>Stage</strong></td>
+<td>Choosing which changed files go into the next save point</td>
+</tr>
+<tr>
+<td><strong>Commit</strong></td>
+<td>One save point, with a short message saying what changed</td>
+</tr>
+<tr>
+<td><strong>GitHub</strong></td>
+<td>A website that keeps an online copy of your repository</td>
+</tr>
+<tr>
+<td><strong>Push</strong></td>
+<td>Uploading your commits from your laptop to GitHub</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="diagram-wrap"><svg aria-label="Diagram: from your folder to GitHub. Your folder (you and Copilot change files), stage (pick which changes to save), commit (a save point with a message on your laptop), push to GitHub (an online copy of your project). Only push sends your work online." role="img" version="1.1" viewbox="0 0 572.4 202.896" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<metadata>
+<rdf:rdf xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<cc:work>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+<dc:date>2026-10-28T18:30:47.029762</dc:date>
+<dc:format>image/svg+xml</dc:format>
+<dc:creator>
+<cc:agent>
+<dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+</cc:agent>
+</dc:creator>
+</cc:work>
+</rdf:rdf>
+</metadata>
+<defs>
+<style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+</defs>
+<g id="figure_1">
+<g id="patch_1">
+<path d="M 0 202.896 
+L 572.4 202.896 
+L 572.4 0 
+L 0 0 
+z
+" style="fill: var(--background)"></path>
+</g>
+<g id="axes_1">
+<g id="patch_2">
+<path clip-path="url(#p7746c963be)" d="M 22.824 153.5616 
+L 105.966 153.5616 
+Q 112.662 153.5616 112.662 146.9088 
+L 112.662 72.6192 
+Q 112.662 65.9664 105.966 65.9664 
+L 22.824 65.9664 
+Q 16.128 65.9664 16.128 72.6192 
+L 16.128 146.9088 
+Q 16.128 153.5616 22.824 153.5616 
+z
+" style="fill: var(--card); stroke: var(--dg-line); stroke-width: 1.6; stroke-linejoin: miter"></path>
+</g>
+<g id="patch_3">
+<path clip-path="url(#p7746c963be)" d="M 170.694 153.5616 
+L 253.836 153.5616 
+Q 260.532 153.5616 260.532 146.9088 
+L 260.532 72.6192 
+Q 260.532 65.9664 253.836 65.9664 
+L 170.694 65.9664 
+Q 163.998 65.9664 163.998 72.6192 
+L 163.998 146.9088 
+Q 163.998 153.5616 170.694 153.5616 
+z
+" style="fill: var(--card); stroke: var(--dg-line); stroke-width: 1.6; stroke-linejoin: miter"></path>
+</g>
+<g id="patch_4">
+<path clip-path="url(#p7746c963be)" d="M 318.564 153.5616 
+L 401.706 153.5616 
+Q 408.402 153.5616 408.402 146.9088 
+L 408.402 72.6192 
+Q 408.402 65.9664 401.706 65.9664 
+L 318.564 65.9664 
+Q 311.868 65.9664 311.868 72.6192 
+L 311.868 146.9088 
+Q 311.868 153.5616 318.564 153.5616 
+z
+" style="fill: var(--card); stroke: var(--dg-line); stroke-width: 1.6; stroke-linejoin: miter"></path>
+</g>
+<g id="patch_5">
+<path clip-path="url(#p7746c963be)" d="M 466.434 153.5616 
+L 549.576 153.5616 
+Q 556.272 153.5616 556.272 146.9088 
+L 556.272 72.6192 
+Q 556.272 65.9664 549.576 65.9664 
+L 466.434 65.9664 
+Q 459.738 65.9664 459.738 72.6192 
+L 459.738 146.9088 
+Q 459.738 153.5616 466.434 153.5616 
+z
+" style="fill: var(--card); stroke: var(--dg-line); stroke-width: 1.6; stroke-linejoin: miter"></path>
+</g>
+<g id="patch_6">
+<path clip-path="url(#p7746c963be)" d="M 116.893727 109.764 
+Q 138.328837 109.764 157.975093 109.764 
+" style="fill: none; stroke: var(--dg-line); stroke-width: 1.6; stroke-linecap: round"></path>
+<path clip-path="url(#p7746c963be)" d="M 152.375093 106.964 
+L 157.975093 109.764 
+L 152.375093 112.564 
+z
+" style="fill: var(--dg-line); stroke: var(--dg-line); stroke-width: 1.6; stroke-linecap: round"></path>
+</g>
+<g id="patch_7">
+<path clip-path="url(#p7746c963be)" d="M 264.763727 109.764 
+Q 286.198837 109.764 305.845093 109.764 
+" style="fill: none; stroke: var(--dg-line); stroke-width: 1.6; stroke-linecap: round"></path>
+<path clip-path="url(#p7746c963be)" d="M 300.245093 106.964 
+L 305.845093 109.764 
+L 300.245093 112.564 
+z
+" style="fill: var(--dg-line); stroke: var(--dg-line); stroke-width: 1.6; stroke-linecap: round"></path>
+</g>
+<g id="patch_8">
+<path clip-path="url(#p7746c963be)" d="M 412.633727 109.764 
+Q 434.068837 109.764 453.715093 109.764 
+" style="fill: none; stroke: var(--dg-line); stroke-width: 1.6; stroke-linecap: round"></path>
+<path clip-path="url(#p7746c963be)" d="M 448.115093 106.964 
+L 453.715093 109.764 
+L 448.115093 112.564 
+z
+" style="fill: var(--dg-line); stroke: var(--dg-line); stroke-width: 1.6; stroke-linecap: round"></path>
+</g>
+<g id="text_1">
+<text style="font-size: 13px; font-family: var(--editorial); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 286.2 21.06)" x="286.2" y="21.06">From your folder to GitHub</text>
+</g>
+<g id="text_2">
+<text style="font-weight: 500; font-size: 10.5px; font-family: var(--sans); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 64.395 89.761549)" x="64.395" y="89.761549">Your folder</text>
+</g>
+<g id="text_3">
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(26.030391 122.579437)">You (and Copilot)</text>
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(37.205859 135.179438)">change files</text>
+</g>
+<g id="text_4">
+<text style="font-weight: 500; font-size: 10.5px; font-family: var(--sans); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 212.265 89.761549)" x="212.265" y="89.761549">Staged</text>
+</g>
+<g id="text_5">
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(179.353125 122.579437)">You pick which</text>
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(175.447266 135.179438)">changes to save</text>
+</g>
+<g id="text_6">
+<text style="font-weight: 500; font-size: 10.5px; font-family: var(--sans); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 360.135 89.761549)" x="360.135" y="89.761549">Commit</text>
+</g>
+<g id="text_7">
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(321.209297 116.279438)">A save point with</text>
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(327.257578 127.980141)">a message, on</text>
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(334.347188 141.479438)">your laptop</text>
+</g>
+<g id="text_8">
+<text style="font-weight: 500; font-size: 10.5px; font-family: var(--sans); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 508.005 89.761549)" x="508.005" y="89.761549">GitHub</text>
+</g>
+<g id="text_9">
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(474.740156 122.579437)">An online copy</text>
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(475.069922 135.179438)">of your project</text>
+</g>
+<g id="text_10">
+<text style="font-weight: 500; font-size: 8.8px; font-family: var(--sans); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 138.33 95.417937)" x="138.33" y="95.417937">stage</text>
+</g>
+<g id="text_11">
+<text style="font-weight: 500; font-size: 8.8px; font-family: var(--sans); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 286.2 95.418281)" x="286.2" y="95.418281">commit</text>
+</g>
+<g id="text_12">
+<text style="font-weight: 500; font-size: 8.8px; font-family: var(--sans); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 434.07 95.418281)" x="434.07" y="95.418281">push</text>
+</g>
+<g id="text_13">
+<text style="font-size: 8.8px; font-family: var(--sans); text-anchor: middle; fill: var(--muted-foreground)" transform="rotate(-0 286.2 179.132681)" x="286.2" y="179.132681">Everything left of GitHub happens on your laptop; only push sends your work online</text>
+</g>
+</g>
+</g>
+<defs>
+<clippath id="p7746c963be">
+<rect height="188.496" width="558" x="7.2" y="7.2"></rect>
+</clippath>
+</defs>
+</svg>
+</figure>
+<p>Why it matters today: Streamlit Community Cloud takes your app <strong>from GitHub</strong>. No push, no live app.</p>
+
+  </div>
+</section>
+<section class="section" id="s-8-2-before-your-first-save-check-gitignore-and-tell-git-who-you-are">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>8.2 Before your first save: check .gitignore and tell Git who you are</h2>
+    <p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span></p>
+<div class="install-steps"><div class="install-step"><div class="install-step-line"><div class="install-step-dot">1</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>Open <code>.gitignore</code> in the Explorer. Check that it has a line that says <code>.env</code>. This tells Git never to save your key file. If the line is missing, add it and save the file.</p></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">2</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>Git writes your name on every commit, so it needs to know who you are. Open the terminal, stop the app with <code>Ctrl+C</code>, and run these two commands, one at a time, with your own name and the email of your GitHub account:</p></div></div></div></div>
+<div class="code-block"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Terminal</div><pre>git config --global user.name "Your Name"</pre></div>
+<div class="code-block"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Terminal</div><pre>git config --global user.email "you@example.com"</pre></div>
+<p>Nothing appears when they succeed. You only do this once per laptop.</p>
+
+  </div>
+</section>
+<section class="section" id="s-8-3-create-the-repository">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>8.3 Create the repository</h2>
+    <p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> click the <strong>Source Control</strong> icon in the left bar (<code>Ctrl+Shift+G</code>). Because your folder is not a repository yet, you see a button <strong>Initialize Repository</strong>. Click it.</p>
+<div class="info-box info-box--success"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9.5"></polyline></svg></span><div class="info-box-body"><span class="info-box-label">What to look for</span> <p>the panel now lists your files under <strong>Changes</strong>, each with a <strong>U</strong> (untracked: Git sees it, but has not saved it yet). <code>.env</code> is <strong>not</strong> in the list, and in the Explorer its name is greyed out. That is <code>.gitignore</code> at work. If <code>.env</code> is in the list, stop and tell a mentor.</p></div></div>
+
+  </div>
+</section>
+<section class="section" id="s-8-4-make-your-first-commit">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>8.4 Make your first commit</h2>
+    <p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span></p>
+<div class="install-steps"><div class="install-step"><div class="install-step-line"><div class="install-step-dot">1</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-title">Stage</div><div class="install-step-desc"><p>Hover over the <strong>Changes</strong> heading and click the <strong>+</strong> (Stage All Changes). The files move up to <strong>Staged Changes</strong>.</p></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">2</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-title">Write a message</div><div class="install-step-desc"><p>In the box above, type a short note on what this save point holds, for example <code>Investment calculator with live IDX prices</code>.</p></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">3</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-title">Commit</div><div class="install-step-desc"><p>Click <strong>Commit</strong>.</p></div></div></div></div>
+<div class="info-box info-box--success"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9.5"></polyline></svg></span><div class="info-box-body"><span class="info-box-label">What to look for</span> <p>the <strong>Changes</strong> list is empty: everything is saved in a commit on your laptop. Nothing is on the internet yet.</p></div></div>
+
+  </div>
+</section>
+<section class="section" id="s-8-5-push-to-github">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>8.5 Push to GitHub</h2>
+    <p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span></p>
+<div class="install-steps"><div class="install-step"><div class="install-step-line"><div class="install-step-dot">1</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>In Source Control, click <strong>Publish Branch</strong>.</p></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">2</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>If VS Code asks you to sign in to GitHub, allow it, and approve in the browser window that opens.</p></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">3</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>Choose <strong>Publish to GitHub public repository</strong>. Keep the suggested name or type your own, such as <code>idx-stock-snapshot</code>.</p></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">4</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>Wait for the message that the repository was published, and click <strong>Open on GitHub</strong>.</p></div></div></div></div>
+<div class="info-box info-box--success"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9.5"></polyline></svg></span><div class="info-box-body"><span class="info-box-label">What to look for</span> <p>on github.com you see your files, including <code>app.py</code> and <code>requirements.txt</code>, and your commit message. <code>.env</code> must <strong>not</strong> be there. If it is, tell a mentor: the key must be replaced, because deleting the file still leaves it in the history.</p></div></div>
+
+  </div>
+</section>
+<section class="section" id="s-8-6-the-everyday-flow">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>8.6 The everyday flow</h2>
+    <p>From now on, every time your app works a little better:</p>
+<div aria-label="Table: Step, In Source Control" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th>Step</th>
+<th>In Source Control</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Stage</strong></td>
+<td><strong>+</strong> next to <strong>Changes</strong></td>
+</tr>
+<tr>
+<td><strong>2. Commit</strong></td>
+<td>Type a message that says what changed, click <strong>Commit</strong></td>
+</tr>
+<tr>
+<td><strong>3. Push</strong></td>
+<td>Click <strong>Sync Changes</strong> to upload your new commits to GitHub</td>
+</tr>
+</tbody>
+</table></div>
+<p>Save often: a commit is cheap, and it is your way back. If a later change breaks your app, right-click a file under <strong>Changes → Discard Changes</strong>, and that file goes back to your last commit. This cannot be undone.</p>
+
+  </div>
+</section>
+<div class="container"><nav class="page-nav" aria-label="Previous and next page"><a href="/module-7" class="page-nav-link"><span class="page-nav-label"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Previous</span><span class="page-nav-title">Module 07: Stretch: three features, worked through</span></a><a href="/module-9" class="page-nav-link page-nav-link--next"><span class="page-nav-label">Next <svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="page-nav-title">Module 09: Ship it</span></a></nav></div>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="https://algorit.ma" class="footer-logo" target="_blank" rel="noopener" aria-label="Algoritma">
+      <img class="logo-wordmark logo--on-light" src="assets/algoritma-wordmark-midnight.svg" alt="Algoritma" width="118" height="28" />
+      <img class="logo-wordmark logo--on-dark" src="assets/algoritma-wordmark-cream.svg" alt="Algoritma" width="118" height="28" />
+    </a>
+    <p class="footer-text">Build and ship a live IDX stock app with an AI pair programmer. GitHub Copilot x Sectors Community Meetup, 31 October 2026, Block71 Jakarta.</p>
+    <p class="footer-text footer-text--fine">This session is about building software. Nothing in it, including any number your app shows, is investment advice.</p>
+  </div>
+</footer>
+<script>
+  function currentTheme(){
+    return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  }
+
+  function toggleTheme(){
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.classList.toggle('dark', next === 'dark');
+    try { localStorage.setItem('copilot-sectors-theme', next); } catch (e) {}
+    syncThemeIcon(next);
+  }
+
+  function syncThemeIcon(theme){
+    var sun = document.getElementById('theme-icon-sun');
+    var moon = document.getElementById('theme-icon-moon');
+    // Show the theme you would switch to
+    if (sun) sun.style.display = theme === 'dark' ? 'block' : 'none';
+    if (moon) moon.style.display = theme === 'light' ? 'block' : 'none';
+  }
+
+  function checkNavScroll(){
+    var el = document.getElementById('navLinks');
+    var wrap = document.querySelector('.nav-links-wrap');
+    var left = document.querySelector('.nav-scroll-arrow--left');
+    var right = document.querySelector('.nav-scroll-arrow--right');
+    if (!el || !wrap || !left || !right) return;
+    var maxScroll = el.scrollWidth - el.clientWidth;
+    var showLeft = el.scrollLeft > 4;
+    var showRight = maxScroll > 4 && el.scrollLeft < maxScroll - 4;
+    left.classList.toggle('visible', showLeft);
+    right.classList.toggle('visible', showRight);
+    wrap.classList.toggle('show-left', showLeft);
+    wrap.classList.toggle('show-right', showRight);
+  }
+
+  function scrollNav(dir){
+    var el = document.getElementById('navLinks');
+    if (el) el.scrollBy({ left: dir * 140, behavior: 'smooth' });
+  }
+
+  function copyText(text){
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function(resolve, reject){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
+      document.body.removeChild(ta);
+    });
+  }
+
+  function copyCodeBlock(btn){
+    var block = btn.closest('.code-block');
+    var pre = block ? block.querySelector('pre') : null;
+    if (!pre) return;
+    var tip = btn.querySelector('.code-copy-tip');
+    var original = btn.querySelector('svg').outerHTML;
+    copyText(pre.textContent).then(function(){
+      btn.classList.add('copied');
+      btn.querySelector('svg').outerHTML = '<svg class="icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+      if (tip) tip.textContent = 'Copied';
+      setTimeout(function(){
+        btn.classList.remove('copied');
+        btn.querySelector('svg').outerHTML = original;
+        if (tip) tip.textContent = '';
+      }, 1500);
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', function(){
+    syncThemeIcon(currentTheme());
+    var navLinks = document.getElementById('navLinks');
+    var active = navLinks ? navLinks.querySelector('.nav-link.active') : null;
+    if (active && navLinks) {
+      navLinks.scrollLeft = active.offsetLeft - navLinks.clientWidth / 2 + active.offsetWidth / 2;
+    }
+    checkNavScroll();
+    if (navLinks) navLinks.addEventListener('scroll', checkNavScroll);
+    window.addEventListener('resize', checkNavScroll);
+  });
+
+</script>
+</body>
+</html>

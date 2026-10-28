@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" class="editorial">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 05: Connecting to real market data | Copilot x Sectors</title>
+  <script>
+    (function(){
+      var t = 'light';
+      try { t = localStorage.getItem('copilot-sectors-theme') || 'light'; } catch (e) {}
+      if (t === 'dark') document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Average&family=Ubuntu+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Ubuntu+Sans+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/algoritma-mark-midnight.svg" type="image/svg+xml" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Course">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="Copilot x Sectors, home">
+      <img class="logo-mark logo--on-light" src="assets/algoritma-mark-midnight.svg" alt="Algoritma" width="24" height="24" />
+      <img class="logo-mark logo--on-dark" src="assets/algoritma-mark-cream.svg" alt="Algoritma" width="24" height="24" />
+      <span class="nav-brand-text">Copilot x Sectors</span>
+    </a>
+    <div class="nav-links-wrap">
+      <button class="nav-scroll-arrow nav-scroll-arrow--left" type="button" onclick="scrollNav(-1)" aria-label="Scroll left" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a><a href="/setup" class="nav-link">Setup</a><a href="/module-1" class="nav-link"><span class="nav-num">01</span>Vibe coding</a><a href="/module-2" class="nav-link"><span class="nav-num">02</span>AI workspace</a><a href="/module-3" class="nav-link"><span class="nav-num">03</span>Web apps</a><a href="/module-4" class="nav-link"><span class="nav-num">04</span>Warm-up</a><a href="/module-5" class="nav-link active" aria-current="page"><span class="nav-num">05</span>Market data</a><a href="/module-6" class="nav-link"><span class="nav-num">06</span>IDX app</a><a href="/module-7" class="nav-link"><span class="nav-num">07</span>Stretch</a><a href="/module-8" class="nav-link"><span class="nav-num">08</span>Git</a><a href="/module-9" class="nav-link"><span class="nav-num">09</span>Ship it</a><a href="/module-10" class="nav-link"><span class="nav-num">10</span>MCP bonus</a><a href="/resources" class="nav-link">Resources</a>
+      </div>
+      <button class="nav-scroll-arrow nav-scroll-arrow--right" type="button" onclick="scrollNav(1)" aria-label="Scroll right" tabindex="-1"><span class="nav-scroll-arrow-icon"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span></button>
+    </div>
+    <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch between light and dark theme">
+      <svg id="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+<header class="page-header">
+  <div class="container page-header-inner">
+    <div class="page-header-eyebrow"><span class="eyebrow-num">Module 05</span> <span aria-hidden="true">/</span> Market data</div>
+    <h1>Connecting to real market data</h1>
+    <p class="page-header-desc">Real IDX prices inside your calculator.</p>
+    
+  </div>
+</header>
+<main id="main">
+
+<section class="section" id="s-5-1-what-is-an-api">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>5.1 What is an API?</h2>
+    <p>So far your app only knows what you type into it. Real prices live on Sectors’ computers. Your app gets them through an <strong>API</strong> (application programming interface): a set way for one program to ask another for data.</p>
+<figure class="diagram-wrap"><svg aria-label="Diagram: an API is like a waiter. Your app asks for data through sectors.py; the Sectors API checks your key, takes the order and brings the answer; Sectors' database holds IDX prices and company reports. The request is a company report for BBCA plus your API key; the response is data as JSON, for example last_close_price 4940." role="img" version="1.1" viewbox="0 0 572.4 202.896" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<metadata>
+<rdf:rdf xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<cc:work>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+<dc:date>2026-10-28T18:30:47.007618</dc:date>
+<dc:format>image/svg+xml</dc:format>
+<dc:creator>
+<cc:agent>
+<dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+</cc:agent>
+</dc:creator>
+</cc:work>
+</rdf:rdf>
+</metadata>
+<defs>
+<style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+</defs>
+<g id="figure_1">
+<g id="patch_1">
+<path d="M 0 202.896 
+L 572.4 202.896 
+L 572.4 0 
+L 0 0 
+z
+" style="fill: var(--background)"></path>
+</g>
+<g id="axes_1">
+<g id="patch_2">
+<path clip-path="url(#p82a23f17d6)" d="M 28.404 153.5616 
+L 153.396 153.5616 
+Q 160.092 153.5616 160.092 146.9088 
+L 160.092 72.6192 
+Q 160.092 65.9664 153.396 65.9664 
+L 28.404 65.9664 
+Q 21.708 65.9664 21.708 72.6192 
+L 21.708 146.9088 
+Q 21.708 153.5616 28.404 153.5616 
+z
+" style="fill: var(--card); stroke: var(--dg-line); stroke-width: 1.6; stroke-linejoin: miter"></path>
+</g>
+<g id="patch_3">
+<path clip-path="url(#p82a23f17d6)" d="M 223.704 153.5616 
+L 348.696 153.5616 
+Q 355.392 153.5616 355.392 146.9088 
+L 355.392 72.6192 
+Q 355.392 65.9664 348.696 65.9664 
+L 223.704 65.9664 
+Q 217.008 65.9664 217.008 72.6192 
+L 217.008 146.9088 
+Q 217.008 153.5616 223.704 153.5616 
+z
+" style="fill: var(--card); stroke: var(--dg-line); stroke-width: 1.6; stroke-linejoin: miter"></path>
+</g>
+<g id="patch_4">
+<path clip-path="url(#p82a23f17d6)" d="M 419.004 153.5616 
+L 543.996 153.5616 
+Q 550.692 153.5616 550.692 146.9088 
+L 550.692 72.6192 
+Q 550.692 65.9664 543.996 65.9664 
+L 419.004 65.9664 
+Q 412.308 65.9664 412.308 72.6192 
+L 412.308 146.9088 
+Q 412.308 153.5616 419.004 153.5616 
+z
+" style="fill: var(--card); stroke: var(--dg-line); stroke-width: 1.6; stroke-linejoin: miter"></path>
+</g>
+<g id="patch_5">
+<path clip-path="url(#p82a23f17d6)" d="M 164.324885 94.7952 
+Q 188.551212 94.7952 210.988685 94.7952 
+" style="fill: none; stroke: var(--dg-line); stroke-width: 1.6; stroke-linecap: round"></path>
+<path clip-path="url(#p82a23f17d6)" d="M 205.388685 91.9952 
+L 210.988685 94.7952 
+L 205.388685 97.5952 
+z
+" style="fill: var(--dg-line); stroke: var(--dg-line); stroke-width: 1.6; stroke-linecap: round"></path>
+</g>
+<g id="patch_6">
+<path clip-path="url(#p82a23f17d6)" d="M 212.775115 124.7328 
+Q 188.548788 124.7328 165.887708 124.7328 
+" style="fill: none; stroke: var(--muted-foreground); stroke-width: 1.4; stroke-linecap: round"></path>
+<path clip-path="url(#p82a23f17d6)" d="M 171.487708 127.5328 
+L 165.887708 124.7328 
+L 171.487708 121.9328 
+z
+" style="fill: var(--muted-foreground); stroke: var(--muted-foreground); stroke-width: 1.4; stroke-linecap: round"></path>
+</g>
+<g id="patch_7">
+<path clip-path="url(#p82a23f17d6)" d="M 359.624885 94.7952 
+Q 383.851212 94.7952 406.288685 94.7952 
+" style="fill: none; stroke: var(--dg-line); stroke-width: 1.6; stroke-linecap: round"></path>
+<path clip-path="url(#p82a23f17d6)" d="M 400.688685 91.9952 
+L 406.288685 94.7952 
+L 400.688685 97.5952 
+z
+" style="fill: var(--dg-line); stroke: var(--dg-line); stroke-width: 1.6; stroke-linecap: round"></path>
+</g>
+<g id="patch_8">
+<path clip-path="url(#p82a23f17d6)" d="M 408.075115 124.7328 
+Q 383.848788 124.7328 361.187708 124.7328 
+" style="fill: none; stroke: var(--muted-foreground); stroke-width: 1.4; stroke-linecap: round"></path>
+<path clip-path="url(#p82a23f17d6)" d="M 366.787708 127.5328 
+L 361.187708 124.7328 
+L 366.787708 121.9328 
+z
+" style="fill: var(--muted-foreground); stroke: var(--muted-foreground); stroke-width: 1.4; stroke-linecap: round"></path>
+</g>
+<g id="text_1">
+<text style="font-size: 13px; font-family: var(--editorial); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 286.2 21.06)" x="286.2" y="21.06">An API is like a waiter</text>
+</g>
+<g id="text_2">
+<text style="font-weight: 500; font-size: 10.5px; font-family: var(--sans); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 90.9 89.761139)" x="90.9" y="89.761139">Your app</text>
+</g>
+<g id="text_3">
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(44.812266 122.579437)">app.py asks for data</text>
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(48.539531 135.179438)">through sectors.py</text>
+</g>
+<g id="text_4">
+<text style="font-weight: 500; font-size: 10.5px; font-family: var(--sans); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 286.2 89.761139)" x="286.2" y="89.761139">Sectors API</text>
+</g>
+<g id="text_5">
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(232.394062 116.279438)">The waiter: checks your</text>
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(239.705859 128.879437)">key, takes the order,</text>
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(245.692266 141.479438)">brings the answer</text>
+</g>
+<g id="text_6">
+<text style="font-weight: 500; font-size: 10.5px; font-family: var(--sans); text-anchor: middle; fill: var(--foreground)" transform="rotate(-0 481.5 89.761549)" x="481.5" y="89.761549">Sectors' database</text>
+</g>
+<g id="text_7">
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(429.337969 122.579437)">The kitchen: IDX prices</text>
+<text style="font-size: 9px; font-family: var(--sans); fill: var(--muted-foreground)" transform="translate(433.344375 135.179438)">and company reports</text>
+</g>
+<g id="text_8">
+<text style="font-size: 8.8px; font-family: var(--sans); text-anchor: middle; fill: var(--muted-foreground)" transform="rotate(-0 188.55 56.610281)" x="188.55" y="56.610281">1  Request: "company report for BBCA" + your API key</text>
+</g>
+<g id="text_9">
+<text style="font-size: 8.8px; font-family: var(--sans); text-anchor: middle; fill: var(--muted-foreground)" transform="rotate(-0 188.55 173.588681)" x="188.55" y="173.588681">2  Response: data as JSON, e.g. "last_close_price": 4940</text>
+</g>
+</g>
+</g>
+<defs>
+<clippath id="p82a23f17d6">
+<rect height="188.496" width="558" x="7.2" y="7.2"></rect>
+</clippath>
+</defs>
+</svg>
+</figure>
+<p>Think of a restaurant. You do not walk into the kitchen; you give your order to a <strong>waiter</strong>, who brings the food back. The API is the waiter: your app hands it an order, “the company report for BBCA, please”, and it brings back a plate of data. The data arrives as <strong>JSON</strong>, plain text made of labelled values, such as <code>"last_close_price": 4940</code>.</p>
+<p>You will not write this request yourself. The starter kit’s <code>sectors.py</code> is a <strong>helper</strong>: a small file of ready-made functions that place the order for you.</p>
+
+  </div>
+</section>
+<section class="section" id="s-5-2-api-keys-and-secrets">
+  <div class="container">
+    <div class="section-label">Read</div>
+    <h2>5.2 API keys and secrets</h2>
+    <p>The waiter only serves members. An <strong>API key</strong> is your membership card: a long secret code that tells Sectors the request is from you. Each request uses <strong>credits</strong>, so a key is worth money.</p>
+<p>A <strong>secret</strong> is any value that must not be shared. Your key never goes into <code>app.py</code>, into a Copilot chat, or onto GitHub, where bots scan for keys within minutes. It goes in a separate file called <code>.env</code>, which stays on your laptop.</p>
+
+  </div>
+</section>
+<section class="section" id="s-5-3-put-your-key-in-env">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>5.3 Put your key in .env</h2>
+    <p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span></p>
+<div class="install-steps"><div class="install-step"><div class="install-step-line"><div class="install-step-dot">1</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>In the Explorer, right-click <code>.env.example</code>, choose <strong>Copy</strong>, then <strong>Paste</strong>, and rename the copy to <code>.env</code> (exactly that: dot, e, n, v).</p></div></div></div><div class="install-step"><div class="install-step-line"><div class="install-step-dot">2</div><div class="install-step-connector"></div></div><div class="install-step-body"><div class="install-step-desc"><p>Open <code>.env</code> and replace the placeholder with your key, with no spaces and no quotes: <code>SECTORS_API_KEY=your-key-here</code>. Save the file.</p></div></div></div></div>
+<p>That is all. <code>sectors.py</code> reads the key from this file, and in Module 8 you check that Git never uploads it.</p>
+
+  </div>
+</section>
+<section class="section" id="s-5-4-get-to-know-the-helper">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>5.4 Get to know the helper</h2>
+    <p class="do-it-line"><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> in a <strong>New Chat</strong> in <strong>Ask</strong> mode, send:</p>
+<div class="code-block code-block--prompt"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Prompt</div><pre><strong>#sectors.py Explain in plain words what each function in this file does, what I give it and what it gives back. Don’t change anything.</strong></pre></div>
+<div class="info-box info-box--success"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9.5"></polyline></svg></span><div class="info-box-body"><span class="info-box-label">What to look for</span> <p>one line for each of the three functions:</p></div></div>
+<div aria-label="Table: Function, You give it, It gives back" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th>Function</th>
+<th>You give it</th>
+<th>It gives back</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>get_company_overview</code></td>
+<td>A ticker, such as <code>"BBCA"</code></td>
+<td>Basic facts about the company: name, sector, last close price, market cap and more</td>
+</tr>
+<tr>
+<td><code>get_daily_prices</code></td>
+<td>A ticker, and optionally a start and end date</td>
+<td>A table with one row per trading day: date, open, high, low, close, volume, market cap</td>
+</tr>
+<tr>
+<td><code>get_company_financials</code></td>
+<td>A ticker</td>
+<td>The company’s yearly financials (used in 7.2)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Copilot should also mention that the key is read from <code>SECTORS_API_KEY</code>, and that when something goes wrong, such as an unknown ticker, the helper raises a <strong><code>SectorsError</code></strong>: a problem report with a plain message that your app can show on the page.</p>
+
+  </div>
+</section>
+<section class="section" id="s-5-5-add-live-prices-to-your-calculator">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>5.5 Add live prices to your calculator</h2>
+    <p>You are not starting a new app: you add real data to the one you have. Your calculator gets a ticker box, the company’s latest price, and a new answer: <strong>how many lots of this stock your monthly saving can buy</strong>. On IDX, shares are bought in <strong>lots</strong> of 100.</p>
+<p class="do-it-line"><strong>Plan.</strong><span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> in the same Ask chat, send:</p>
+<div class="code-block code-block--prompt"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Prompt</div><pre><strong>#app.py #sectors.py I want to connect my Investment Goal Calculator to real IDX prices.</strong>
+
+Frontend: above the calculator, add a text box for an IDX ticker, default BBCA. Show the company name as a heading, then its sector, sub-sector and last close price in rupiah. Under the calculator’s result, add: “Your monthly saving buys X lots of this stock”, plus what is left over. Add a small expandable section at the bottom showing the raw data, so I can see every field.
+
+Backend: 1 lot is 100 shares. Lots = monthly saving divided by (last close price × 100), rounded down.
+
+Data: use only get_company_overview from sectors.py; if it raises a SectorsError, show its message with st.warning. Don’t write new API code and never put the key in app.py.
+
+Tell me the plan in short steps. Don’t write code yet.</pre></div>
+<p><strong>Implement.</strong> If the plan matches, switch to <strong>Agent</strong> and send: <strong>Build exactly the plan above. Change only app.py.</strong> Click <strong>Keep</strong>.</p>
+<p><strong>Test.</strong> Click <strong>Rerun</strong> (or start the app again with <code>streamlit run app.py</code>).</p>
+<div class="info-box info-box--success"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9.5"></polyline></svg></span><div class="info-box-body"><span class="info-box-label">What to look for</span> <ul class="content-list">
+<li><strong>PT Bank Central Asia Tbk.</strong> as a heading; sector <strong>Financials</strong>, sub-sector <strong>Banks</strong>; a last close in rupiah</li>
+<li>The calculator still works, and the 0% check from 4.4 still gives Rp 120.000.000</li>
+<li>The lots by hand: if the last close is Rp 4.940, one lot costs 4.940 × 100 = Rp 494.000, so Rp 1.000.000 buys <strong>2 lots</strong> with <strong>Rp 12.000</strong> left over. Use the price your app shows.</li>
+<li>Typing <code>TLKM</code> updates everything; no key appears anywhere in <code>app.py</code></li>
+</ul></div></div>
+
+<p><strong>Repeat.</strong> One improvement of your own, round the same loop: for example, show the lots result only when the monthly saving is at least one lot.</p>
+
+  </div>
+</section>
+<section class="section" id="s-5-6-what-does-each-field-mean">
+  <div class="container">
+    <div class="section-label">Hands-on</div>
+    <h2>5.6 What does each field mean?</h2>
+    <p class="do-it-line">You do not need a finance background; ask. <span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> open the raw data section on your page and copy it. In <strong>Ask</strong> mode, send:</p>
+<div class="code-block code-block--prompt"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">Prompt</div><pre><strong>I’m not from finance. Below is data about one Indonesian stock. For each field, explain in one plain sentence what it means and what unit it’s in. Then tell me which three fields matter most for a simple stock page.</strong>
+
+(paste the data here)</pre></div>
+<div aria-label="Table: Field, Plain meaning, Watch out" class="table-wrap" role="region" tabindex="0"><table class="simple-table">
+
+<thead>
+<tr>
+<th>Field</th>
+<th>Plain meaning</th>
+<th>Watch out</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>company_name</code></td>
+<td>The company’s registered name</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sector</code>, <code>sub_sector</code></td>
+<td>The business area: for example Financials, then Banks</td>
+<td></td>
+</tr>
+<tr>
+<td><code>last_close_price</code></td>
+<td>The price of one share when the market last closed, in rupiah</td>
+<td>Shares trade in lots of 100</td>
+</tr>
+<tr>
+<td><code>latest_close_date</code></td>
+<td>The trading day that price comes from</td>
+<td>The market is closed at weekends</td>
+</tr>
+<tr>
+<td><code>daily_close_change</code></td>
+<td>How much the closing price moved from the day before</td>
+<td>A fraction: −0.0169 means −1.69%</td>
+</tr>
+<tr>
+<td><code>market_cap</code></td>
+<td>Market capitalisation: share price × all shares, the market’s price tag for the whole company, in rupiah</td>
+<td>A 15-digit number: divide by 10¹² for trillions</td>
+</tr>
+<tr>
+<td><code>listing_date</code></td>
+<td>The day the company joined the stock exchange</td>
+<td></td>
+</tr>
+<tr>
+<td><code>close</code>, <code>volume</code> (daily prices)</td>
+<td>One day’s closing price, and how many shares changed hands</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<div class="info-box info-box--success"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9.5"></polyline></svg></span><div class="info-box-body"><span class="info-box-label">What to look for</span> <p>the explanation should say that <code>daily_close_change</code> is a fraction, not a percent, and that <code>market_cap</code> is in rupiah. Check one number yourself: if <code>market_cap</code> is 602888959530000, that is about <strong>Rp 602.9 trillion</strong>. These numbers describe the market; they are not a recommendation to buy or sell.</p></div></div>
+
+  </div>
+</section>
+<div class="container"><nav class="page-nav" aria-label="Previous and next page"><a href="/module-4" class="page-nav-link"><span class="page-nav-label"><svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Previous</span><span class="page-nav-title">Module 04: Warm-up: Investment Goal Calculator</span></a><a href="/module-6" class="page-nav-link page-nav-link--next"><span class="page-nav-label">Next <svg class="icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span class="page-nav-title">Module 06: Build your IDX app</span></a></nav></div>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="https://algorit.ma" class="footer-logo" target="_blank" rel="noopener" aria-label="Algoritma">
+      <img class="logo-wordmark logo--on-light" src="assets/algoritma-wordmark-midnight.svg" alt="Algoritma" width="118" height="28" />
+      <img class="logo-wordmark logo--on-dark" src="assets/algoritma-wordmark-cream.svg" alt="Algoritma" width="118" height="28" />
+    </a>
+    <p class="footer-text">Build and ship a live IDX stock app with an AI pair programmer. GitHub Copilot x Sectors Community Meetup, 31 October 2026, Block71 Jakarta.</p>
+    <p class="footer-text footer-text--fine">This session is about building software. Nothing in it, including any number your app shows, is investment advice.</p>
+  </div>
+</footer>
+<script>
+  function currentTheme(){
+    return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  }
+
+  function toggleTheme(){
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.classList.toggle('dark', next === 'dark');
+    try { localStorage.setItem('copilot-sectors-theme', next); } catch (e) {}
+    syncThemeIcon(next);
+  }
+
+  function syncThemeIcon(theme){
+    var sun = document.getElementById('theme-icon-sun');
+    var moon = document.getElementById('theme-icon-moon');
+    // Show the theme you would switch to
+    if (sun) sun.style.display = theme === 'dark' ? 'block' : 'none';
+    if (moon) moon.style.display = theme === 'light' ? 'block' : 'none';
+  }
+
+  function checkNavScroll(){
+    var el = document.getElementById('navLinks');
+    var wrap = document.querySelector('.nav-links-wrap');
+    var left = document.querySelector('.nav-scroll-arrow--left');
+    var right = document.querySelector('.nav-scroll-arrow--right');
+    if (!el || !wrap || !left || !right) return;
+    var maxScroll = el.scrollWidth - el.clientWidth;
+    var showLeft = el.scrollLeft > 4;
+    var showRight = maxScroll > 4 && el.scrollLeft < maxScroll - 4;
+    left.classList.toggle('visible', showLeft);
+    right.classList.toggle('visible', showRight);
+    wrap.classList.toggle('show-left', showLeft);
+    wrap.classList.toggle('show-right', showRight);
+  }
+
+  function scrollNav(dir){
+    var el = document.getElementById('navLinks');
+    if (el) el.scrollBy({ left: dir * 140, behavior: 'smooth' });
+  }
+
+  function copyText(text){
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function(resolve, reject){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
+      document.body.removeChild(ta);
+    });
+  }
+
+  function copyCodeBlock(btn){
+    var block = btn.closest('.code-block');
+    var pre = block ? block.querySelector('pre') : null;
+    if (!pre) return;
+    var tip = btn.querySelector('.code-copy-tip');
+    var original = btn.querySelector('svg').outerHTML;
+    copyText(pre.textContent).then(function(){
+      btn.classList.add('copied');
+      btn.querySelector('svg').outerHTML = '<svg class="icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+      if (tip) tip.textContent = 'Copied';
+      setTimeout(function(){
+        btn.classList.remove('copied');
+        btn.querySelector('svg').outerHTML = original;
+        if (tip) tip.textContent = '';
+      }, 1500);
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', function(){
+    syncThemeIcon(currentTheme());
+    var navLinks = document.getElementById('navLinks');
+    var active = navLinks ? navLinks.querySelector('.nav-link.active') : null;
+    if (active && navLinks) {
+      navLinks.scrollLeft = active.offsetLeft - navLinks.clientWidth / 2 + active.offsetWidth / 2;
+    }
+    checkNavScroll();
+    if (navLinks) navLinks.addEventListener('scroll', checkNavScroll);
+    window.addEventListener('resize', checkNavScroll);
+  });
+
+</script>
+</body>
+</html>
