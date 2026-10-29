@@ -66,7 +66,7 @@ Data: get_daily_prices from sectors.py for each ticker, with the dates from my s
 
 If I pick fewer than two tickers, show a short message instead of the chart. Keep everything else as it is. Tell me the plan and how many Sectors requests it makes. Don’t write code yet.</pre></div>
 <div class="info-box info-box--success"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9.5"></polyline></svg></span><div class="info-box-body"><span class="info-box-label">What to look for</span> <p><code>st.multiselect</code> for the tickers; one <code>get_daily_prices</code> request per ticker; the divide-and-multiply step; a table with one column per ticker for <code>st.line_chart</code>. The answer to “how many requests” should be one per ticker.</p></div></div>
-<p><strong>Implement.</strong> Switch to <strong>Agent</strong>: <strong>Build exactly the plan above. Change only app.py.</strong> Click <strong>Keep</strong>, then <strong>Rerun</strong>.</p>
+<p><strong>Implement.</strong> Switch to <strong>Agent</strong>: <strong>Build exactly the plan above. Change only app.py.</strong> Then click <strong>Rerun</strong>.</p>
 <p><strong>Test.</strong></p>
 <ul class="content-list">
 <li>Every line starts at exactly <strong>100</strong> on the first day</li>
@@ -92,7 +92,7 @@ Data: use get_company_financials from sectors.py for the ticker in the text box.
 
 If the ticker is not found, show the same friendly message as the Price tab. Tell me the plan. Don’t write code yet.</pre></div>
 <div class="info-box info-box--success"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9.5"></polyline></svg></span><div class="info-box-body"><span class="info-box-label">What to look for</span> <p><code>st.tabs</code>; one call to <code>get_company_financials</code>; only the three fields you named; dividing by 1.000.000.000.000 to get trillions; a plan for empty values.</p></div></div>
-<p><strong>Implement.</strong> Switch to <strong>Agent</strong>: <strong>Build exactly the plan above. Change only app.py.</strong> Click <strong>Keep</strong>, then <strong>Rerun</strong>.</p>
+<p><strong>Implement.</strong> Switch to <strong>Agent</strong>: <strong>Build exactly the plan above. Change only app.py.</strong> Then click <strong>Rerun</strong>.</p>
 <p><strong>Test.</strong></p>
 <ul class="content-list">
 <li>Two tabs; the <strong>Price</strong> tab looks exactly as before</li>
@@ -142,7 +142,7 @@ Then plan how to give my Streamlit app that look: put the theme colours and font
 
 Change only how the app looks, not what it does or calculates. Don’t copy the HTML page into my app. Tell me the plan and which files you will create or change. Don’t write code yet.</pre></div>
 <div class="info-box info-box--success"><span class="info-box-icon"><svg aria-hidden="true" class="icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="9"></circle><polyline points="8 12.5 11 15.5 16 9.5"></polyline></svg></span><div class="info-box-body"><span class="info-box-label">What to look for</span> <p>a description that matches the table above; a new file <code>.streamlit/config.toml</code> with the background and accent colours; a short CSS block, not a whole web page; no change to any calculation or to <code>sectors.py</code>.</p></div></div>
-<p><strong>Implement.</strong> Switch to <strong>Agent</strong>: <strong>Build exactly the plan above. Change only app.py, and create .streamlit/config.toml.</strong> Click <strong>Keep</strong>. Then stop the app with <code>Ctrl+C</code> and start it again with <code>streamlit run app.py</code>, so Streamlit reads the new theme file.</p>
+<p><strong>Implement.</strong> Switch to <strong>Agent</strong>: <strong>Build exactly the plan above. Change only app.py, and create .streamlit/config.toml.</strong> Then stop the app with <code>Ctrl+C</code> and start it again with <code>streamlit run app.py</code>, so Streamlit reads the new theme file.</p>
 <p><strong>Test.</strong></p>
 <ul class="content-list">
 <li>The dark background, the pink and gold highlights and the two fonts look like the template</li>

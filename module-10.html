@@ -118,9 +118,29 @@ Use the Sectors tools. Show the top five over the last 7 days among companies wo
 </section>
 <section class="section" id="s-10-4-set-it-up-at-home">
   <div class="container">
-    <div class="section-label">Read</div>
+    <div class="section-label">Hands-on</div>
     <h2>10.4 Set it up at home</h2>
-    <p>You tell VS Code where the server is and how to sign in, in <code>.vscode/mcp.json</code> or with <strong>MCP: Add Server</strong> from the Command Palette (<code>Ctrl+Shift+P</code>). Take the address and sign-in steps from <code>docs.sectors.app</code> <span class="verify">[VERIFY: Sectors MCP server URL and authentication]</span>. If the file holds your key, add it to <code>.gitignore</code>.</p>
+    <p class="do-it-line">The Sectors MCP server lives at <code>https://sectors-mcp.supertype.ai/mcp</code>, and it signs you in with your Sectors API key. <span class="do-it"><svg aria-hidden="true" class="icon" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="12"><polygon points="7 4 20 12 7 20 7 4"></polygon></svg>Do it</span> in your project, create a folder <code>.vscode</code> with a file <code>mcp.json</code> inside, and paste:</p>
+<div class="code-block"><button aria-label="Copy to clipboard" class="code-copy-btn" onclick="copyCodeBlock(this)" type="button"><svg aria-hidden="true" class="icon" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="14"><rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="code-copy-tip" role="status"></span></button><div class="code-block-label">.vscode/mcp.json</div><pre>{
+  "servers": {
+    "sectors": {
+      "type": "http",
+      "url": "https://sectors-mcp.supertype.ai/mcp",
+      "headers": {
+        "Authorization": "Bearer ${input:sectors-api-key}"
+      }
+    }
+  },
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "sectors-api-key",
+      "description": "Your Sectors Financial API key",
+      "password": true
+    }
+  ]
+}</pre></div>
+<p>Save it, and start the server from the <strong>Start</strong> link VS Code shows above <code>"sectors"</code>. VS Code asks for your key the first time the server starts and does not keep it after a restart, so the key never sits in the file. Then ask a question in <strong>Agent</strong> mode, such as the one in 10.3.</p>
 
   </div>
 </section>
