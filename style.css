@@ -567,22 +567,45 @@ main > .section:last-of-type { border-bottom: none; }
 .section > .container > .objectives { margin-bottom: var(--flow-space); }
 .section > .container > :last-child { margin-bottom: 0; }
 
-/* "Do it" lines */
-.do-it-line { margin-top: var(--space-2); }
+/* "Do it" step cards: badge, instruction, then the prompt, command or steps it points at */
+.do-step {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--primary);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+  margin-bottom: var(--flow-space);
+}
+.do-step-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.do-step-label { font-weight: 600; color: var(--foreground); }
+.do-step-text { margin-top: var(--space-3); line-height: 1.6; }
+.do-step > .code-block,
+.do-step > .install-steps,
+.do-step > .content-list { margin: var(--space-3) 0 0; }
+.do-step > .install-steps { margin-top: var(--space-4); }
 .do-it {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: var(--reading-sm);
-  font-weight: 500;
+  font-size: var(--reading-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
   color: var(--primary-foreground);
   background: var(--primary);
-  border-radius: var(--radius-sm);
-  padding: 2px 8px;
-  margin-right: 6px;
-  vertical-align: 2px;
+  border-radius: var(--radius-pill);
+  padding: 5px 10px;
 }
 .do-it .icon { fill: currentColor; stroke: none; }
+.do-step--watch { border-left-color: var(--muted-foreground); }
+.do-step--watch .do-it { background: var(--muted); color: var(--foreground); }
+.do-step--watch .do-it .icon { fill: none; stroke: currentColor; }
 
 .verify {
   font-family: var(--mono);
@@ -1070,3 +1093,4 @@ main > .section:last-of-type { border-bottom: none; }
   .app-mock-metrics { grid-template-columns: 1fr 1fr; }
   .app-mock-value { font-size: var(--reading-sm); }
 }
+.do-step .install-step { padding-bottom: var(--space-3); }
